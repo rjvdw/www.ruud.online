@@ -1,10 +1,11 @@
-baseurl: /
+baseurl: ''
 url: https://www.ruud.online
 
 markdown: kramdown
 plugins:
   - jekyll-sitemap
   - jekyll-last-modified-at
+  - jekyll-assets
 
 exclude:
   - Gemfile
