@@ -1,6 +1,11 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: default
+title: ruud.online
+class: home
 ---
+
+# Hello, World!
+
+Welcome to my homepage.
+My name is Ruud and I am a web developer from Nĳmegen, the Netherlands.
+On this website you can read about projects I am working on and technology I am following.
