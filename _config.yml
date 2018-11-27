@@ -7,6 +7,9 @@ plugins:
   - jekyll-last-modified-at
   - jekyll-assets
 
+include:
+  - _headers
+
 exclude:
   - Gemfile
   - Gemfile.lock

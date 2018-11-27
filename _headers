@@ -1,0 +1,15 @@
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+
+/assets/:filename.{css,js,png,webp,json}
+  Cache-Control: Immutable
+
+/7C5D2ED1.asc
+  Cache-Control: Immutable
+
+/BingSiteAuth.xml
+  Cache-Control: Immutable
+
+/googlea1fd24277b5016b1.html
+  Cache-Control: Immutable
