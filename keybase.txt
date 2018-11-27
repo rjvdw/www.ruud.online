@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/rdcl
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.ruud.online
+  * I am rdcl (https://keybase.io/rdcl) on keybase.
+  * I have a public key with fingerprint 9C11 4672 2590 C454 275C  71A9 DBCD CAA2 0AE3 7E45
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101b6259a6ba8d1ec2b744bc47cd927012b2534218f9f0a3c35d78635dc228bb42b0a",
+      "fingerprint": "9c1146722590c454275c71a9dbcdcaa20ae37e45",
+      "host": "keybase.io",
+      "key_id": "dbcdcaa20ae37e45",
+      "kid": "0101b6259a6ba8d1ec2b744bc47cd927012b2534218f9f0a3c35d78635dc228bb42b0a",
+      "uid": "7636138167c515d2605a9e9c02f66d19",
+      "username": "rdcl"
+    },
+    "service": {
+      "hostname": "www.ruud.online",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1526713759,
+  "expire_in": 157680000,
+  "prev": "d60f7f2dd9cfb5cf79c54a954560c638c5afdb36aa427ccd1350d9a8b59b2b11",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUm1QVFUY3l2IkO+PscwJdvaOQMOsdL8/FoavKIMxGmxwUUfx3nPvxcvC3mU/
+WJBUBGSAQWESMNMiR6Uph1oZq9ksVNoaTEoGUBAEC5XUkHHCVFCwu4z+62fnxzlz
+3vd5nvO873mbg31U/urh8YmkvEPdUeoLtznVxqe/Hq+AOJkvhwwVkElYOoQiXrDZ
+800SDxkgGIERjkQJhiU5luYRAaAcheMcwCnAMygFIyiHEhiOIrTIiDCLAYzgKZpU
+doCiNMfhKAezkB4SJXOBYLVYJbNdkWUAguAkhSrCMMAJHKUIQCEsw3OAByyLwqyA
+UQJOKMRtss3LUMxxrE1IkGQlplzyl+z9B/5/9u1YkqNIjEQwGiEpQCAEj5IwwTIC
+A2BUJEkeYbxAm2A1s8WCgrbyoAjaoYeUSKkEBG9TvVU8yzqdzgSrw8EnyOYiySwo
+VItVtstALlKS2+x2i83gJdvLLUtogct/ppPPSWZeaaPCKBWsNkk2QwZEQQK75BVG
+CJSkEIwiGD0klFkkq5AveREERdKwsrzvCKXeppGwSIkob+QZIHIEECkGEDjLEDhB
+woDEaECwIs9hJMsqHwMAj2AEzDMszREMh3IIAnlLKzHLkIFSfLIFiqZNKjCzdodV
+gHYE1GswX5XaXxX1ks43ZPdfp4qdDb113OhXz0fvBY137lQBy8KeR5KZ0AWtsXGq
+8NRVbXeNPv1w0PhcvcdTwWwI2+UaO1eV4J6vq1p0Dx3Sn/+dl6Ku6VvW1U+2tWTQ
+aTNQZeLPJ2u2TlPHWreXnJ8LnxYeraHic3yCu011IftSg/8cKco25dHYudpVrU0T
+oetZw1ky8n5c/Z7pwvCotgcarmN00Q9M5uWe8Fge78xzdzpSVNmR1dW5i78Ft7LR
+U76mt7o/gvgxj6v/wORwtHswVkqsfWW1NmNzyMcPGo26/bl+N9XppV37ost68AML
+lev6ttNrXTuPXjoc9FpHRezAVOVVd8x3xjCfs+mlaRG3tlwL7smOvdsQ+7m2T9Pb
+MJvWe31kZebXF0/qvni1rX/Bvz3r0y/3Om5YT8dOqmNSVg8sn9vSlUcfu7vp3ljX
+yh/++XEuSFwhdlYnM+QZv28/eTHloVyjIoQ9PY3s8l1Z8VtHPvOIgR9cztVlVde8
+e7HKNW/iY94ZLLzjs+rp+3GZ2XK748mRUO3EmfLQqYDjf8gb3eRPM+2vr18x9I2n
+IsdeUq92de1uTpVz9puEJN/HB2sHGoef9IUYbxvvhTcPXYdTj8Yllo3NFm9wXYix
+PByKPPGyTvfLbIvmxvyywP6Wvy8nBYbdeiNe+96V5OT7EYOsX9Ml1LnG2Z5wenzy
+ZsgjJqpjs+EO8qGhqXhTSmBJ55WMsSOZ7RGa70etb7858y8=
+=6+S0
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rdcl
+
+==================================================================
