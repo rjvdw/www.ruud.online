@@ -1,11 +1,12 @@
 ---
-layout: default
+layout: home
 title: ruud.online
 class: home
+intro: >-
+  # Hello, World!
+
+  Welcome to my homepage.
+  My name is Ruud and I am a web developer from Nĳmegen, the Netherlands.
+  On this website you can read about projects I am working on and technology I am following.
 ---
 
-# Hello, World!
-
-Welcome to my homepage.
-My name is Ruud and I am a web developer from Nĳmegen, the Netherlands.
-On this website you can read about projects I am working on and technology I am following.

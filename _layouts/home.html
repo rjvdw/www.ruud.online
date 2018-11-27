@@ -1,0 +1,27 @@
+---
+layout: base
+---
+
+<div>
+  {{ page.intro | markdownify }}
+
+  <picture>
+    <source
+      class="profile-picture"
+      type="image/webp"
+      srcset="{% asset me.png @path magick:format=webp %} 2x,
+              {% asset me.png @path magick:format=webp @magick:half %}"
+    >
+    <img
+      class="profile-picture"
+      alt=""
+      src="{% asset me.png @path @magick:half %}"
+      srcset="{% asset me.png @path %} 2x"
+      width="120" height="120"
+    >
+  </picture>
+</div>
+
+<section>
+  {{ content }}
+</section>
