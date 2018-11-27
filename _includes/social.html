@@ -1,0 +1,15 @@
+<ul class="social-links">
+  {%- for item in site.data.social -%}
+    <li class="social-links__item">
+      <a
+        class="social-links__link"
+        href="{{ item.href }}"
+        aria-label="{{ item.label }}"
+      >
+        <svg class="social-links__icon" role="img" width="48" height="48">
+          <use xlink:href="{% asset glyphicons-social.svg @path %}#{{ item.icon }}"/>
+        </svg>
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>

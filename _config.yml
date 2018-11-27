@@ -1,11 +1,11 @@
 baseurl: ''
 url: https://www.ruud.online
 
-markdown: kramdown
 plugins:
   - jekyll-sitemap
   - jekyll-last-modified-at
   - jekyll-assets
+  - jekyll-target-blank
 
 include:
   - _headers
@@ -21,6 +21,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - .idea/
+  - .idea
   - README.md
+  - TODO.md
   - gulpfile.js

@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    {%- for item in site.data.nav -%}
+      {%- if page.tab == item.tab -%}
+        <li class="active">{{ item.text }}</li>
+      {%- else -%}
+        <li><a href="{{ item.path }}">{{ item.text }}</a></li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</nav>

@@ -56,6 +56,9 @@ GEM
       sass (~> 3.4)
     jekyll-sitemap (1.2.0)
       jekyll (~> 3.3)
+    jekyll-target-blank (1.1.0)
+      jekyll (~> 3.0)
+      nokogiri (~> 1.8.2)
     jekyll-watch (2.1.2)
       listen (~> 3.0)
     kramdown (1.17.0)
@@ -104,6 +107,7 @@ DEPENDENCIES
   jekyll-assets
   jekyll-last-modified-at
   jekyll-sitemap
+  jekyll-target-blank
   mini_magick
 
 BUNDLED WITH

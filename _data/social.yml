@@ -1,0 +1,12 @@
+- href: https://twitter.com/rj_vdw
+  label: My Twitter profile
+  icon: twitter
+- href: https://github.com/rudiculous
+  label: My GitHub profile
+  icon: github
+- href: https://nl.linkedin.com/in/rjvanderweide
+  label: My LinkedIn profile
+  icon: linkedin
+- href: "mailto:rj@rdcl.nl"
+  label: My e-mail address
+  icon: mail

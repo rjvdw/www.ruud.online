@@ -10,7 +10,9 @@
   {% asset main.sass %}
 </head>
 
-<body class="{{page.class}}">
+<body class="{{ page.class }}">
+
+{% include nav.html %}
 
 <main>{{ content }}</main>
 
