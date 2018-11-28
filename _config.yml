@@ -12,6 +12,7 @@ plugins:
 
 include:
   - _headers
+  - _redirects
 
 exclude:
   - Gemfile
