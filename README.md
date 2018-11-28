@@ -7,13 +7,7 @@ This website is generated with [Jekyll][jekyll].
 In order to start a server locally, run the following commands:
 
     bundle install
-    bundle exec jekyll serve
-
-Alternatively, run this command to use [Browsersync][browsersync]:
-
-    yarn
-    yarn start
+    bundle exec jekyll serve --livereload --open-url
 
 
 [jekyll]: https://jekyllrb.com/
-[browsersync]: https://www.browsersync.io/

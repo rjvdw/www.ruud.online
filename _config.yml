@@ -16,10 +16,6 @@ include:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - package.json
-  - yarn.lock
-  - package-lock.json
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
@@ -27,4 +23,3 @@ exclude:
   - .idea
   - README.md
   - TODO.md
-  - gulpfile.js
