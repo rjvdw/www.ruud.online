@@ -5,10 +5,8 @@ class: home
 tab: home
 intro: >-
   # Hello, World!
-
-  Welcome to my homepage.
-  My name is Ruud and I am a web developer from Nĳmegen, the Netherlands.
-  On this website you can read about projects I am working on and technology I am following.
+  
+  Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands.
 ---
 
 I have been developing software professionally since 2012.
@@ -28,3 +26,10 @@ I also have some experience with Rust and Scala.
 ## Social
 
 {% include social.html %}
+
+
+## Other Links
+
+* [My gists on GitHub](https://gist.github.com/rudiculous)
+* [Interesting feeds I follow](https://feedly.com/rdcl)
+* [My public GPG key](/0AE37E45.asc)

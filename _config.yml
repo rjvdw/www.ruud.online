@@ -1,6 +1,9 @@
 baseurl: ''
 url: https://www.ruud.online
 
+sass:
+  sass_dir: assets/css
+
 plugins:
   - jekyll-sitemap
   - jekyll-last-modified-at

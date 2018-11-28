@@ -1,23 +1,11 @@
 ---
 ---
 
-html
-  box-sizing: border-box
-  font:
-    family: Tahoma, Arial, serif
-    size: 16px
+@import "vars"
+@import "base"
+@import "typography"
 
-body
-  background:
-    color: #f3f3f3
-    image: asset_url("handmadepaper.png @magick:half")
-    size: 100px 100px
-  color: #333
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-  body
-    background:
-      image: asset_url("handmadepaper.png")
-
-*
-  box-sizing: inherit
+@import "components/page-nav"
+@import "components/page-header"
+@import "components/page-main"
+@import "components/social-links"

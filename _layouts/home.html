@@ -2,24 +2,26 @@
 layout: base
 ---
 
-<div>
-  {{ page.intro | markdownify }}
+<div class="page-header">
+  <div class="page-header__container">
+    {{- page.intro | markdownify -}}
 
-  <picture>
-    <source
-      class="profile-picture"
-      type="image/webp"
-      srcset="{% asset me.png @path magick:format=webp %} 2x,
-              {% asset me.png @path magick:format=webp @magick:half %}"
-    >
-    <img
-      class="profile-picture"
-      alt=""
-      src="{% asset me.png @path @magick:half %}"
-      srcset="{% asset me.png @path %} 2x"
-      width="120" height="120"
-    >
-  </picture>
+    <picture>
+      <source
+        class="profile-picture"
+        type="image/webp"
+        srcset="{% asset me.png @path magick:format=webp %} 2x,
+                {% asset me.png @path magick:format=webp @magick:half %}"
+      >
+      <img
+        class="profile-picture"
+        alt=""
+        src="{% asset me.png @path @magick:half %}"
+        srcset="{% asset me.png @path %} 2x"
+        width="120" height="120"
+      >
+    </picture>
+  </div>
 </div>
 
-{{ content }}
+<div class="page-main">{{ content }}</div>

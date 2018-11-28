@@ -1,0 +1,37 @@
+@import '../vars'
+
+.page-header
+  background-color: $theme-color-2
+  background-image: asset_url("mainbanner.png")
+  background-repeat: no-repeat
+  background-position: 0 0
+  color: $theme-foreground-color-2
+  font-size: 1.5rem
+  margin: 0 0 2.5rem
+  padding: 1rem 0 5rem
+
+  @media (min-width: 45rem)
+    padding-top: 3rem
+
+  &__container
+    margin: 0 auto
+    padding: 0 .5rem
+    max-width: $page-max-width
+    width: calc(100% - 1rem)
+    position: relative
+
+    @media (min-width: 35rem)
+      padding: 0 3rem
+
+    @media (min-width: 45rem)
+      padding: 0 5rem
+
+
+.profile-picture
+  border-radius: 50%
+  position: absolute
+  right: 1rem
+  bottom: -8rem
+  width: 7.5rem
+  height: 7.5rem
+

@@ -1,0 +1,37 @@
+@import "vars"
+
+html
+  box-sizing: border-box
+  font:
+    family: $base-font-family
+    size: $base-font-size
+  text-rendering: optimizeLegibility
+  margin: 0
+  padding: 0
+  width: 100%
+
+body
+  background:
+    color: $base-background-color
+    image: asset_url("handmadepaper.png @magick:half")
+    size: 100px 100px
+  color: $base-foreground-color
+  margin: 0
+  padding: 0
+  width: 100%
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    background:
+      image: asset_url("handmadepaper.png")
+
+*
+  box-sizing: inherit
+
+a
+  color: $base-link-color
+  text-decoration: none
+
+  &:hover,
+  &:focus
+    color: $base-link-color--hover
+    text-decoration: underline
