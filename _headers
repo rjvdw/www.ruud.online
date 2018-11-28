@@ -1,6 +1,10 @@
 /*
+  X-Content-Type-Options: nosniff
+  X-Download-Options: noopen
   X-Frame-Options: DENY
+  X-Permitted-Cross-Domain-Policies: master-only
   X-XSS-Protection: 1; mode=block
+  Strict-Transport-Security: max-age=63072000; preload
 
 /favicon.ico
   Cache-Control: public, max-age=31536000, immutable

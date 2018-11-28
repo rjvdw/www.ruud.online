@@ -1,5 +1,15 @@
-http://rdcl.nl/* http://www.ruud.online/:splat 301!
-http://www.rdcl.nl/* http://www.ruud.online/:splat 301!
-http://rudiculous.net/* http://www.ruud.online/:splat 301!
-http://www.rudiculous.net/* http://www.ruud.online/:splat 301!
-http://www-ruud-online.netlify.com/* http://www.ruud.online/:splat 301!
+# Enforce HTTPS
+http://ruud.online/* https://www.ruud.online/:splat 301!
+http://www.ruud.online/* https://www.ruud.online/:splat 301!
+
+# Redirect rdcl.nl and www.rdcl.nl to www.ruud.online
+http://rdcl.nl/* https://www.ruud.online/:splat 301!
+https://rdcl.nl/* https://www.ruud.online/:splat 301!
+http://www.rdcl.nl/* https://www.ruud.online/:splat 301!
+https://www.rdcl.nl/* https://www.ruud.online/:splat 301!
+
+# Redirect rudiculous.net and www.rudiculous.net to www.ruud.online
+http://rudiculous.net/* https://www.ruud.online/:splat 301!
+https://rudiculous.net/* https://www.ruud.online/:splat 301!
+http://www.rudiculous.net/* https://www.ruud.online/:splat 301!
+https://www.rudiculous.net/* https://www.ruud.online/:splat 301!
