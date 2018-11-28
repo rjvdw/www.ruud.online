@@ -1,0 +1,16 @@
+'@context': http://schema.org
+'@type': Person
+name: Ruud van der Weide
+email:
+  - rj@rdcl.nl
+url: https://www.ruud.online
+sameAs:
+  - https://twitter.com/rj_vdw
+  - https://keybase.io/rdcl
+  - https://www.patreon.com/rj
+  - https://bandcamp.com/rjvanderweide
+  - https://diasp.eu/u/rjvanderweide
+  - https://github.com/rudiculous
+  - https://www.npmjs.com/~rdcl
+  - https://nl.linkedin.com/in/rjvanderweide
+  - https://about.me/rdcl

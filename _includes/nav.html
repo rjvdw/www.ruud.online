@@ -1,10 +1,14 @@
 <nav class="page-nav">
   <ul class="page-nav__container">
     {%- for item in site.data.nav -%}
-      {%- if page.tab == item.tab -%}
-        <li class="page-nav__item page-nav__item--active"><span class="page-nav__item-link">{{ item.text }}</span></li>
-      {%- else -%}
-        <li class="page-nav__item"><a href="{{ item.path }}" class="page-nav__item-link">{{ item.text }}</a></li>
+      {%- if page.tab == item.tab %}
+        <li class="page-nav__item page-nav__item--active">
+          <span class="page-nav__item-link">{{ item.text }}</span>
+        </li>
+      {%- else %}
+        <li class="page-nav__item">
+          <a href="{{ item.path }}" class="page-nav__item-link">{{ item.text }}</a>
+        </li>
       {%- endif -%}
     {%- endfor -%}
   </ul>

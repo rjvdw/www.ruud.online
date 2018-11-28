@@ -1,6 +1,9 @@
 ---
 layout: home
 title: ruud.online
+description: >-
+  Personal homepage of Ruud van der Weide, a web developer from Nĳmegen.
+  Here you can read about projects I am working on and technology I am following.
 class: home
 tab: home
 intro: >-

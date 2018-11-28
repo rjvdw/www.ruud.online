@@ -12,7 +12,4 @@ group :jekyll_plugins do
   gem 'jekyll-last-modified-at'
   gem 'jekyll-assets' # https://github.com/envygeeks/jekyll-assets
   gem 'jekyll-target-blank' # https://github.com/keithmifsud/jekyll-target-blank
-
-  # TODO
-  # gem 'jekyll-seo-tag' # https://github.com/jekyll/jekyll-seo-tag
 end
