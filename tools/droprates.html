@@ -1,0 +1,115 @@
+---
+layout: tools
+title: droprate calculator | ruud.online
+---
+
+<h1>Drop Rate Calculator</h1>
+
+<div id="dropratecalculator">
+  <form>
+    <table>
+      <tr>
+        <td><label for="droprate">Drop rate</label>
+        <td>
+          <input
+            id="droprate"
+            v-model="droprate"
+            autofocus
+            inputmode="numeric"
+          >%
+        <td>
+
+      <tr>
+        <td><label for="nrattempts">Nr. of attempts</label>
+        <td>
+          <input
+            id="nrattempts"
+            v-model="nrattempts"
+            inputmode="numeric"
+          >
+        <td>
+
+      <tr>
+        <td class="separator" colspan="2">&nbsp;
+
+      <tr>
+        <td colspan="2">&nbsp;
+
+      <tr>
+        <td><label for="chance">Chance</label>
+        <td>
+          <input
+            id="chance"
+            readonly
+            v-bind:value="chance(droprate, nrattempts)"
+          >%
+
+      <tr>
+        <td><label for="perc95">95%</label>
+        <td>
+          <input
+            id="perc95"
+            readonly
+            v-bind:value="percentile(droprate, 95)"
+          >
+
+      <tr>
+        <td><label for="perc99">99%</label>
+        <td>
+          <input
+            id="perc99"
+            readonly
+            v-bind:value="percentile(droprate, 99)"
+          >
+    </table>
+  </form>
+</div>
+
+<script>
+  const _app = (() => {
+    'use strict'
+
+    return new Vue({
+      el: '#dropratecalculator',
+      data: {
+        droprate: 1,
+        nrattempts: 100,
+      },
+      methods: {
+        chance(pVal, nVal) {
+          const p = parseFloat(pVal)/100
+          const n = Math.round(parseFloat(nVal))
+
+          if (n === 0) return 0
+
+          const c = 100 - 100*Math.pow(1 - p, n)
+          return c.toFixed(2)
+        },
+
+        percentile(pVal, percentile) {
+          const p = parseFloat(pVal)/100
+          return computePercentile(p, percentile/100)
+        },
+      },
+    })
+
+    function computePercentile(p, percentile) {
+      if (p === 0) return '∞'
+
+      let lower = 0
+      let upper = Number.MAX_SAFE_INTEGER
+      let res
+
+      while (lower < upper - 1) {
+        res = Math.floor((lower + upper) / 2)
+        if (1 - Math.pow(1 - p, res) < percentile) {
+          lower = res
+        } else {
+          upper = res
+        }
+      }
+
+      return res
+    }
+  })()
+</script>

@@ -4,6 +4,16 @@ url: https://www.ruud.online
 sass:
   sass_dir: assets/css
 
+defaults:
+  - scope:
+      path: "tools/**/*.*"
+    values:
+      sitemap: false
+  - scope:
+      path: "googlea1fd24277b5016b1.html"
+    values:
+      sitemap: false
+
 plugins:
   - jekyll-sitemap
   - jekyll-last-modified-at
