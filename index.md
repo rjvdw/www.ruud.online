@@ -21,8 +21,10 @@ I also have some experience with Rust and Scala.
 
 ## Certificates
 
-* [My Badges on Aclaim](https://www.youracclaim.com/users/rdcl)
-* [My Report Card on Codeschool](https://www.codeschool.com/users/rdcl)
+* [Oracle Certified Associate, Java SE 8 Programmer](https://www.youracclaim.com/badges/8d179b16-64b2-4abe-8978-319ed8d40483)
+* [Oracle Certified Professional, Java SE 8 Programmer](https://www.youracclaim.com/badges/5087e8f9-d41d-453b-b16e-6fed220f3b0d)
+* [Coursera – Functional Programming Principles in Scala](https://www.coursera.org/account/accomplishments/verify/7L9QPDZF4ESV)
+* [Coursera – Functional Program Design in Scala](https://www.coursera.org/account/accomplishments/verify/DGTMN79P7VWJ)
 
 
 ## Social
