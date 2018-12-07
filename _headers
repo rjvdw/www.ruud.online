@@ -12,6 +12,9 @@
 /assets/:filename.{css,js,png,webp,json}
   Cache-Control: public, max-age=31536000, immutable
 
+/0AE37E45.asc
+  Cache-Control: public, max-age=31536000, immutable
+
 /7C5D2ED1.asc
   Cache-Control: public, max-age=31536000, immutable
 

@@ -36,4 +36,4 @@ I also have some experience with Rust and Scala.
 
 * [My gists on GitHub](https://gist.github.com/rudiculous)
 * [Interesting feeds I follow](https://feedly.com/rdcl)
-* [My public GPG key](/7C5D2ED1.asc)
+* [My public GPG key](/0AE37E45.asc)
