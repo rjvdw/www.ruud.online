@@ -25,6 +25,7 @@ I also have some experience with Rust and Scala.
 * [Oracle Certified Professional, Java SE 8 Programmer](https://www.youracclaim.com/badges/5087e8f9-d41d-453b-b16e-6fed220f3b0d)
 * [Coursera – Functional Programming Principles in Scala](https://www.coursera.org/account/accomplishments/verify/7L9QPDZF4ESV)
 * [Coursera – Functional Program Design in Scala](https://www.coursera.org/account/accomplishments/verify/DGTMN79P7VWJ)
+* [Certified ScrumMaster](http://bcert.me/skkgftvcl)
 
 
 ## Social
