@@ -3,6 +3,10 @@ url: https://www.ruud.online
 
 sass:
   sass_dir: assets/css
+  style: compressed
+
+assets:
+  compression: true
 
 defaults:
   - scope:
