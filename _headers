@@ -1,3 +1,5 @@
+---
+---
 /*
   X-Content-Type-Options: nosniff
   X-Download-Options: noopen
@@ -6,10 +8,13 @@
   X-XSS-Protection: 1; mode=block
   Strict-Transport-Security: max-age=63072000; preload
 
+/
+  Link: <{% asset main.sass @path %}>; rel=preload; as=style
+
 /favicon.ico
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/:filename.{css,js,png,webp,json}
+/assets/:filename.{css,js,png,webp,json,svg}
   Cache-Control: public, max-age=31536000, immutable
 
 /0AE37E45.asc
