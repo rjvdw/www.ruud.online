@@ -1,0 +1,111 @@
+---
+layout: tools
+title: Conway's Game of Life | ruud.online
+---
+
+<h1>Conway's Game of Life</h1>
+
+<div id="conway">
+  <p>${ generations } generations</p>
+
+  <div class="conway-grid">
+    <div
+      v-for="cell in cells"
+      :class="[ 'conway-grid__cell', `conway-grid__cell--${ cell.state }` ]"
+      v-on:click="!running && cell.toggle()"
+    ></div>
+  </div>
+
+  <button :disabled="running" v-on:click="start">Start</button>
+  <button :disabled="!running" v-on:click="stop">Stop</button>
+</div>
+
+<script>
+  const _app = (() => {
+    'use strict'
+
+    const NR_COLUMNS = 40
+    const NR_ROWS = 20
+    const NR_CELLS = NR_COLUMNS * NR_ROWS
+
+    class Cell {
+      constructor(activated = false) {
+        this.activated = activated
+      }
+
+      toggle() {
+        this.activated = !this.activated
+      }
+
+      get state() {
+        return this.activated
+          ? 'activated'
+          : 'deactivated'
+      }
+    }
+
+    return new Vue({
+      el: '#conway',
+      delimiters: ['${', '}'],
+      data: {
+        cells: new Array(NR_CELLS).fill(null).map(x => new Cell()),
+        running: null,
+        generations: 0,
+        playSpeed: 500,
+      },
+      methods: {
+        start() {
+          this.generations = 0
+          this.running = setInterval(() => {
+            this.cells = this.cells.map(nextGeneration)
+            this.generations += 1
+          }, this.playSpeed)
+        },
+        stop() {
+          clearInterval(this.running)
+          this.running = null
+        }
+      },
+    })
+
+    function nextGeneration(cell, index, cells) {
+      const [col, row] = getCoords(index)
+      const neighbours = getNeighbours(cells, col, row)
+      const liveNeighbours = neighbours.filter(cell => cell.activated).length
+
+      if (liveNeighbours < 2 || liveNeighbours > 3)
+        return new Cell(false)
+
+      if (liveNeighbours === 3)
+        return new Cell(true)
+
+      return cell
+    }
+
+    function getIndex(col, row) {
+      if (col < 0 || col >= NR_COLUMNS)
+        return -1
+      if (row < 0 || row >= NR_ROWS)
+        return -1
+      return row * NR_COLUMNS + col
+    }
+
+    function getCoords(index) {
+      const col = index % NR_COLUMNS
+      const row = (index - col) / NR_COLUMNS
+
+      return [col, row]
+    }
+
+    function getNeighbours(cells, col, row) {
+      return [
+        [col - 1, row - 1], [col, row - 1], [col + 1, row - 1],
+        [col - 1, row],                     [col + 1, row],
+        [col - 1, row + 1], [col, row + 1], [col + 1, row + 1],
+      ]
+        .map(([c, r]) => getIndex(c, r))
+        .filter(x => x !== -1)
+        .map(i => cells[i])
+    }
+  })()
+</script>
