@@ -2,17 +2,32 @@
   display: grid
   align-items: start
   justify-items: start
+  background: #000
+  width: fit-content
+  border: 1px solid #000
   grid:
-    template-columns: repeat(40, 1rem)
-    column-gap: .125rem
-    row-gap: .125rem
+    template-columns: repeat(80, .5rem)
+    column-gap: 1px
+    row-gap: 1px
 
   &__cell
-    height: 1rem
-    width: 1rem
+    height: .5rem
+    width: .5rem
+
+    &:hover, &:active, &:focus
+      outline: 0
+      box-shadow: 0
 
     &--deactivated
-      background: #999
+      background: #eee
 
     &--activated
-      background: #f66
+      background: #000
+
+    &:focus
+      border: 1px solid red
+
+.conway-play-speed
+  display: flex
+  align-items: center
+  margin-top: .5rem
