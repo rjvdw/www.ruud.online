@@ -23,6 +23,7 @@ title: Conway's Game of Life | ruud.online
 
   <button :disabled="running" v-on:click="start">Start</button>
   <button :disabled="!running" v-on:click="stop">Stop</button>
+  <button :disabled="running" v-on:click="reset">Reset</button>
 
   <p class="conway-play-speed">
     <label for="play-speed">Speed:</label>
@@ -75,6 +76,11 @@ title: Conway's Game of Life | ruud.online
           clearInterval(this.running)
           this.running = null
         },
+        reset() {
+          for (const cell of this.cells) {
+            cell.activated = false
+          }
+        },
         iter() {
           this.cells = this.cells.map(nextGeneration)
           this.generations += 1
@@ -82,7 +88,7 @@ title: Conway's Game of Life | ruud.online
         },
         focus(cell, event) {
           const move = (diff) => {
-            const idx = this.cells.findIndex(c => c === cell) + diff
+            let idx = this.cells.findIndex(c => c === cell) + diff
             if (idx < 0) idx = 0
             if (idx >= NR_COLUMNS * NR_ROWS) idx = NR_COLUMNS * NR_ROWS
 
