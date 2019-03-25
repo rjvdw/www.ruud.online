@@ -65,51 +65,49 @@ title: droprate calculator | ruud.online
   </form>
 </div>
 
-<script>
-  const _app = (() => {
-    'use strict'
+<script type="module">
+  import Vue from 'https://dev.jspm.io/vue@latest/dist/vue.esm.browser'
 
-    return new Vue({
-      el: '#dropratecalculator',
-      data: {
-        droprate: 1,
-        nrattempts: 100,
+  const app = new Vue({
+    el: '#dropratecalculator',
+    data: {
+      droprate: 1,
+      nrattempts: 100,
+    },
+    methods: {
+      chance(pVal, nVal) {
+        const p = parseFloat(pVal) / 100
+        const n = Math.round(parseFloat(nVal))
+
+        if (n === 0) return 0
+
+        const c = 100 - 100 * Math.pow(1 - p, n)
+        return c.toFixed(2)
       },
-      methods: {
-        chance(pVal, nVal) {
-          const p = parseFloat(pVal)/100
-          const n = Math.round(parseFloat(nVal))
 
-          if (n === 0) return 0
-
-          const c = 100 - 100*Math.pow(1 - p, n)
-          return c.toFixed(2)
-        },
-
-        percentile(pVal, percentile) {
-          const p = parseFloat(pVal)/100
-          return computePercentile(p, percentile/100)
-        },
+      percentile(pVal, percentile) {
+        const p = parseFloat(pVal) / 100
+        return computePercentile(p, percentile / 100)
       },
-    })
+    },
+  })
 
-    function computePercentile(p, percentile) {
-      if (p === 0) return '∞'
+  function computePercentile(p, percentile) {
+    if (p === 0) return '∞'
 
-      let lower = 0
-      let upper = Number.MAX_SAFE_INTEGER
-      let res
+    let lower = 0
+    let upper = Number.MAX_SAFE_INTEGER
+    let res
 
-      while (lower < upper - 1) {
-        res = Math.floor((lower + upper) / 2)
-        if (1 - Math.pow(1 - p, res) < percentile) {
-          lower = res
-        } else {
-          upper = res
-        }
+    while (lower < upper - 1) {
+      res = Math.floor((lower + upper) / 2)
+      if (1 - Math.pow(1 - p, res) < percentile) {
+        lower = res
+      } else {
+        upper = res
       }
-
-      return res
     }
-  })()
+
+    return res
+  }
 </script>

@@ -17,7 +17,7 @@ title: Conway's Game of Life | ruud.online
       v-on:click="!running && cell.toggle()"
       v-on:keydown.enter="!running && cell.toggle()"
       v-on:keydown.space="!running && cell.toggle()"
-      v-on:keydown.prevent="focus(cell, event)"
+      v-on:keydown.prevent="focus(cell, $event)"
     ></div>
   </div>
 
@@ -32,126 +32,124 @@ title: Conway's Game of Life | ruud.online
   </p>
 </div>
 
-<script>
-  const _app = (() => {
-    'use strict'
+<script type="module">
+  import Vue from 'https://dev.jspm.io/vue@latest/dist/vue.esm.browser'
 
-    const NR_COLUMNS = 80
-    const NR_ROWS = 40
+  const NR_COLUMNS = 80
+  const NR_ROWS = 40
 
-    class Cell {
-      constructor(activated = false) {
-        this.activated = activated
-      }
-
-      toggle() {
-        this.activated = !this.activated
-      }
-
-      get state() {
-        return this.activated
-          ? 'activated'
-          : 'deactivated'
-      }
+  class Cell {
+    constructor(activated = false) {
+      this.activated = activated
     }
 
-    return new Vue({
-      el: '#conway',
-      delimiters: ['${', '}'],
-      data: {
-        cells: new Array(NR_COLUMNS * NR_ROWS).fill(null).map(x => new Cell()),
-        running: null,
-        generations: 0,
-        playSpeedIdx: 5,
-        get playSpeed() {
-          return [10, 25, 50, 125, 250, 500, 750, 1000, 1500, 2000][this.playSpeedIdx]
-        },
+    toggle() {
+      this.activated = !this.activated
+    }
+
+    get state() {
+      return this.activated
+        ? 'activated'
+        : 'deactivated'
+    }
+  }
+
+  const app = new Vue({
+    el: '#conway',
+    delimiters: ['${', '}'],
+    data: {
+      cells: new Array(NR_COLUMNS * NR_ROWS).fill(null).map(x => new Cell()),
+      running: null,
+      generations: 0,
+      playSpeedIdx: 5,
+      get playSpeed() {
+        return [10, 25, 50, 125, 250, 500, 750, 1000, 1500, 2000][this.playSpeedIdx]
       },
-      methods: {
-        start() {
-          this.generations = 0
-          this.running = setTimeout(() => this.iter(), this.playSpeed)
-        },
-        stop() {
-          clearInterval(this.running)
-          this.running = null
-        },
-        reset() {
-          for (const cell of this.cells) {
-            cell.activated = false
-          }
-        },
-        iter() {
-          this.cells = this.cells.map(nextGeneration)
-          this.generations += 1
-          this.running = setTimeout(() => this.iter(), this.playSpeed)
-        },
-        focus(cell, event) {
-          const move = (diff) => {
-            let idx = this.cells.findIndex(c => c === cell) + diff
-            if (idx < 0) idx = 0
-            if (idx >= NR_COLUMNS * NR_ROWS) idx = NR_COLUMNS * NR_ROWS
-
-            event.target.parentElement.children[idx].focus()
-          }
-
-          if (!this.running)
-            switch (event.key) {
-              case 'ArrowDown':
-                move(NR_COLUMNS)
-                break
-              case 'ArrowUp':
-                move(-NR_COLUMNS)
-                break
-              case 'ArrowLeft':
-                move(-1)
-                break
-              case 'ArrowRight':
-                move(1)
-                break
-            }
-        },
+    },
+    methods: {
+      start() {
+        this.generations = 0
+        this.running = setTimeout(() => this.iter(), this.playSpeed)
       },
-    })
+      stop() {
+        clearInterval(this.running)
+        this.running = null
+      },
+      reset() {
+        for (const cell of this.cells) {
+          cell.activated = false
+        }
+      },
+      iter() {
+        this.cells = this.cells.map(nextGeneration)
+        this.generations += 1
+        this.running = setTimeout(() => this.iter(), this.playSpeed)
+      },
+      focus(cell, event) {
+        const move = (diff) => {
+          let idx = this.cells.findIndex(c => c === cell) + diff
+          if (idx < 0) idx = 0
+          if (idx >= NR_COLUMNS * NR_ROWS) idx = NR_COLUMNS * NR_ROWS
 
-    function nextGeneration(cell, index, cells) {
-      const [col, row] = getCoords(index)
-      const neighbours = getNeighbours(cells, col, row)
-      const liveNeighbours = neighbours.filter(cell => cell.activated).length
+          event.target.parentElement.children[idx].focus()
+        }
 
-      if (liveNeighbours < 2 || liveNeighbours > 3)
-        return new Cell(false)
+        if (!this.running)
+          switch (event.key) {
+            case 'ArrowDown':
+              move(NR_COLUMNS)
+              break
+            case 'ArrowUp':
+              move(-NR_COLUMNS)
+              break
+            case 'ArrowLeft':
+              move(-1)
+              break
+            case 'ArrowRight':
+              move(1)
+              break
+          }
+      },
+    },
+  })
 
-      if (liveNeighbours === 3)
-        return new Cell(true)
+  function nextGeneration(cell, index, cells) {
+    const [col, row] = getCoords(index)
+    const neighbours = getNeighbours(cells, col, row)
+    const liveNeighbours = neighbours.filter(cell => cell.activated).length
 
-      return cell
-    }
+    if (liveNeighbours < 2 || liveNeighbours > 3)
+      return new Cell(false)
 
-    function getIndex(col, row) {
-      if (col < 0 || col >= NR_COLUMNS)
-        return -1
-      if (row < 0 || row >= NR_ROWS)
-        return -1
-      return row * NR_COLUMNS + col
-    }
+    if (liveNeighbours === 3)
+      return new Cell(true)
 
-    function getCoords(index) {
-      const col = index % NR_COLUMNS
-      const row = (index - col) / NR_COLUMNS
+    return cell
+  }
 
-      return [col, row]
-    }
+  function getIndex(col, row) {
+    if (col < 0 || col >= NR_COLUMNS)
+      return -1
+    if (row < 0 || row >= NR_ROWS)
+      return -1
+    return row * NR_COLUMNS + col
+  }
 
-    function getNeighbours(cells, col, row) {
-      return [
-        [col - 1, row - 1], [col, row - 1], [col + 1, row - 1],
-        [col - 1, row],                     [col + 1, row],
-        [col - 1, row + 1], [col, row + 1], [col + 1, row + 1],
-      ]
-        .map(([c, r]) => getIndex(c, r))
-        .filter(x => x !== -1)
-        .map(i => cells[i])
-    }
-  })()
+  function getCoords(index) {
+    const col = index % NR_COLUMNS
+    const row = (index - col) / NR_COLUMNS
+
+    return [col, row]
+  }
+
+  function getNeighbours(cells, col, row) {
+    return [
+      [col - 1, row - 1], [col, row - 1], [col + 1, row - 1],
+      [col - 1, row], [col + 1, row],
+      [col - 1, row + 1], [col, row + 1], [col + 1, row + 1],
+    ]
+      .map(([c, r]) => getIndex(c, r))
+      .filter(x => x !== -1)
+      .map(i => cells[i])
+  }
 </script>
