@@ -10,10 +10,6 @@ assets:
 
 defaults:
   - scope:
-      path: "tools/**/*.*"
-    values:
-      sitemap: false
-  - scope:
       path: "googlea1fd24277b5016b1.html"
     values:
       sitemap: false
