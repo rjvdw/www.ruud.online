@@ -7,6 +7,10 @@ https://www.ruud.online/tools https://www.rdcl.dev/tools/ 301!
 https://www.ruud.online/tools/ https://www.rdcl.dev/tools/ 301!
 https://www.ruud.online/tools/* https://www.rdcl.dev/tools/:splat 301!
 
+# Redirect rj.rdcl.dev to www.ruud.online
+http://rj.rdcl.dev/* https://www.ruud.online/:splat 301!
+https://rj.rdcl.dev/* https://www.ruud.online/:splat 301!
+
 # Redirect rdcl.nl and www.rdcl.nl to www.ruud.online
 http://rdcl.nl/* https://www.ruud.online/:splat 301!
 https://rdcl.nl/* https://www.ruud.online/:splat 301!
