@@ -34,6 +34,6 @@ Some of the (programming) languages I work with are: Java, Kotlin, Scala, Go, Ru
 
 ## Other Links
 
-* [My gists on GitHub](https://gist.github.com/rudiculous)
+* [My gists on GitHub](https://gist.github.com/rjvdw)
 <!-- * [Interesting feeds I follow](https://feedly.com/rdcl) -->
 * [My public GPG key](/0AE37E45.asc)
