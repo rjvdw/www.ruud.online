@@ -24,6 +24,16 @@ body
     background:
       image: asset_url("handmadepaper.png")
 
+  @media (prefers-color-scheme: dark)
+    background:
+      color: $base-background-color-dark
+      image: asset_url("blackpaper.png @magick:half")
+    color: $base-foreground-color-dark
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+      background:
+        image: asset_url("blackpaper.png")
+
 *
   box-sizing: inherit
 
