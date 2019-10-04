@@ -13,7 +13,7 @@ html
 body
   background:
     color: $base-background-color
-    image: asset_url("handmadepaper.png @magick:half")
+    image: asset_url("bg-light.png @magick:half")
     size: 100px 100px
   color: $base-foreground-color
   margin: 0
@@ -22,18 +22,17 @@ body
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
     background:
-      image: asset_url("handmadepaper.png")
+      image: asset_url("bg-light.png")
 
   @media (prefers-color-scheme: dark)
     background:
       color: $base-background-color-dark
-      //image: asset_url("zwartevilt.png @magick:half") // FIXME
-      image: asset_url("zwartevilt.png")
+      image: asset_url("bg-dark.png @magick:half")
     color: $base-foreground-color-dark
 
     @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
       background:
-        image: asset_url("zwartevilt.png")
+        image: asset_url("bg-dark.png")
 
 *
   box-sizing: inherit
