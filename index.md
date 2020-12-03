@@ -12,7 +12,6 @@ intro: >-
 ---
 
 I have been developing software professionally since 2012.
-Most of my professional experience has been in web development for e-commerce organisations.
 In my spare time I also like working on side projects, learning new programming languages, and trying out new web frameworks.
 
 Some of the (programming) languages I work with are: Java, Kotlin, Scala, Go, Rust, JavaScript/Node.js, HTML, CSS, Ruby and Python.
