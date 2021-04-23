@@ -7,6 +7,9 @@
   X-Permitted-Cross-Domain-Policies: master-only
   X-XSS-Protection: 1; mode=block
   Strict-Transport-Security: max-age=63072000; preload
+  Permissions-Policy: interest-cohort=()
+  Referrer-Policy: no-referrer
+  Content-Security-Policy: default-src 'self'
 
 /
   Link: <{% asset main.sass @path %}>; rel=preload; as=style
