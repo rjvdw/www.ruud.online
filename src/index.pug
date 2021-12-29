@@ -1,0 +1,38 @@
+extends _includes/layouts/home
+
+block intro
+  :md
+    # Hello, World!
+
+    Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands.
+  img.profile-picture(alt="" src="/img/me.png" width="120" height="120")
+
+block content
+  :md
+    I have been developing software professionally since 2012.
+    In my spare time I also like working on side projects, learning new programming languages, and trying out new web frameworks.
+
+    Some (programming) languages I work with are: Java, Rust, C#, Kotlin, Scala, Python, JavaScript/Node.js, HTML, CSS, Ruby and Go.
+
+    ## Certificates
+
+    * [Oracle Certified Associate, Java SE 8 Programmer](https://www.youracclaim.com/badges/8d179b16-64b2-4abe-8978-319ed8d40483)
+    * [Oracle Certified Professional, Java SE 8 Programmer](https://www.youracclaim.com/badges/5087e8f9-d41d-453b-b16e-6fed220f3b0d)
+    * [Coursera – Functional Programming Principles in Scala](https://www.coursera.org/account/accomplishments/verify/7L9QPDZF4ESV)
+    * [Coursera – Functional Program Design in Scala](https://www.coursera.org/account/accomplishments/verify/DGTMN79P7VWJ)
+    * [Certified ScrumMaster](http://bcert.me/skkgftvcl)
+
+  h2 Social
+  ul.social-links
+    each item in social
+      li.social-links__item
+        a.social-links__link(href=item.href aria-label=item.label)
+          svg.social-links__icon(role="img" width="48" height="48" viewBox="12 12 24 24")
+            each path in item.paths
+              path(d=path)
+
+  :md
+    ## Other Links
+
+    * [My gists on GitHub](https://gist.github.com/rjvdw)
+    * [My public GPG key](/0AE37E45.asc)

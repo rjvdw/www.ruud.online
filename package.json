@@ -1,0 +1,19 @@
+{
+  "name": "www.ruud.online",
+  "description": "My personal homepage",
+  "main": "index.js",
+  "repository": "https://github.com/rjvdw/www.ruud.online.git",
+  "author": "Ruud van der Weide <rj@rdcl.dev>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "marked": "^4.0.8",
+    "sass": "^1.45.1"
+  }
+}

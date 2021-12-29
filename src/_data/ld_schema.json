@@ -1,0 +1,17 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Ruud van der Weide",
+  "email": [
+    "rj@rdcl.dev"
+  ],
+  "url": "https://www.ruud.online",
+  "image": "https://www.ruud.online/img/me.png",
+  "sameAs": [
+    "https://twitter.com/rdcl_dev",
+    "https://github.com/rjvdw",
+    "https://keybase.io/rdcl",
+    "https://www.npmjs.com/~rdcl",
+    "https://nl.linkedin.com/in/rjvanderweide"
+  ]
+}

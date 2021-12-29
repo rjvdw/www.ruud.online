@@ -1,7 +1,0 @@
----
----
-{%- if site.context == "production" -%}
-{%- else -%}
-User-agent: *
-Disallow: /
-{%- endif -%}

@@ -1,0 +1,25 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Download-Options: noopen
+  X-Frame-Options: DENY
+  X-Permitted-Cross-Domain-Policies: master-only
+  X-XSS-Protection: 1; mode=block
+  Strict-Transport-Security: max-age=63072000; preload
+  Permissions-Policy: interest-cohort=()
+  Referrer-Policy: no-referrer
+  Content-Security-Policy: default-src 'self' cloudfront.net *.cloudfront.net
+
+/favicon.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+/0AE37E45.asc
+  Cache-Control: public, max-age=31536000, immutable
+
+/7C5D2ED1.asc
+  Cache-Control: public, max-age=31536000, immutable
+
+/BingSiteAuth.xml
+  Cache-Control: public, max-age=31536000, immutable
+
+/googlea1fd24277b5016b1.html
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,42 @@
+@import "vars"
+
+html
+  box-sizing: border-box
+  font:
+    family: $base-font-family
+    size: $base-font-size
+  text-rendering: optimizeLegibility
+  margin: 0
+  padding: 0
+  width: 100%
+
+body
+  background:
+    color: $base-background-color
+    image: url("/img/bg-light.png")
+    size: 100px 100px
+  color: $base-foreground-color
+  margin: 0
+  padding: 0
+  width: 100%
+
+  @media (prefers-color-scheme: dark)
+    background:
+      color: $base-background-color-dark
+      image: url("/img/bg-dark.png")
+    color: $base-foreground-color-dark
+
+*
+  box-sizing: inherit
+
+a
+  color: $base-link-color
+  text-decoration: none
+
+  &:hover,
+  &:focus
+    color: $base-link-color--hover
+    text-decoration: underline
+
+li + li
+  margin-top: 1rem
