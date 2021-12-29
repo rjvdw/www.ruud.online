@@ -1,10 +1,15 @@
 'use strict'
 
 const { INPUT_DIR, OUTPUT_DIR } = require('./util/constants')
-global.md = require('./util/md')
-global.stylesheet = require('./util/stylesheet')
+const markdown = require('./util/md')
+const stylesheet = require('./util/stylesheet')
+
+global.md = text => markdown.render(text)
+global.stylesheet = stylesheet
 
 module.exports = (eleventyConfig) => {
+  eleventyConfig.setLibrary('md', markdown)
+
   eleventyConfig.addPassthroughCopy({
     public: '.',
   })

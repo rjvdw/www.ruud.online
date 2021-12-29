@@ -1,9 +1,17 @@
 'use strict'
 
-const marked = require('marked')
+const markdownIt = require('markdown-it')
+const markdownItLinkAttributes = require('markdown-it-link-attributes')
 
-function md(text) {
-  return marked.parse(text)
-}
+const markdown = markdownIt()
+markdown.use(markdownItLinkAttributes, {
+  matcher(href, _config) {
+    return href.startsWith('http:') || href.startsWith('https:')
+  },
+  attrs: {
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
+})
 
-module.exports = md
+module.exports = markdown
