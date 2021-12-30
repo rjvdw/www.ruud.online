@@ -1,25 +1,55 @@
 doctype html
 html(lang="en")
   head
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    meta(name="theme-color" content="#474069")
-    meta(name="color-scheme" content="light dark")
-    title= title
-    != stylesheet('css/main.sass')
-    each value, key in meta
-      meta(name=key content=value)
-    each value, key in twitter
-      meta(name=`twitter:${key}` content=value)
-    meta(name="twitter:title" content=title)
-    each value, key in open_graph
-      meta(property=`og:${key}` content=value)
-    meta(property="og:title" content=title)
-    if description
-      meta(name="description" content=description)
-      meta(name="twitter:description" content=description)
-      meta(property="og:description" content=description)
-    script(type="application/ld+json")!= JSON.stringify(ld_schema)
+    block meta
+      meta(charset="utf-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+      meta(name="theme-color" content="#474069")
+      meta(name="color-scheme" content="light dark")
+      title= title
+
+    block header-styles
+      != stylesheet('css/main.sass')
+
+    block header-scripts
+
+    block seo
+      block seo-meta
+        each value, key in meta
+          meta(name=key content=value)
+        if description
+          meta(name="description" content=description)
+
+      block seo-twitter
+        each value, key in twitter
+          meta(name=`twitter:${ key }` content=value)
+        meta(name="twitter:title" content=title)
+        if description
+          meta(name="twitter:description" content=description)
+
+      block seo-open-graph
+        each value, key in open_graph
+          meta(property=`og:${ key }` content=value)
+        meta(property="og:title" content=title)
+        if description
+          meta(property="og:description" content=description)
+
+      block seo-ld-json
+        script(type="application/ld+json")!= JSON.stringify(ld_schema)
+
   body(class=cls)
-    include ../nav.pug
+    block nav
+      nav.page-nav
+        ul.page-nav__container
+          each item in nav
+            if tab === item.tab
+              li.page-nav__item.page-nav__item--active
+                span.page-nav__item-link= item.text
+            else
+              li.page-nav__item
+                a.page-nav__item-link(href=item.path)= item.text
+
     block body
+      main.page-main
+        block content
+        | !{content}

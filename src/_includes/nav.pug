@@ -1,9 +1,0 @@
-nav.page-nav
-  ul.page-nav__container
-    each item in nav
-      if tab === item.tab
-        li.page-nav__item.page-nav__item--active
-          span.page-nav__item-link= item.text
-      else
-        li.page-nav__item
-          a.page-nav__item-link(href=item.path)= item.text

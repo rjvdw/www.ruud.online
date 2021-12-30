@@ -1,11 +1,11 @@
-extends _includes/layouts/home
+extends _includes/layouts/base
 
-block intro
-  :md
-    # Hello, World!
-
-    Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands.
-  img.profile-picture(alt="" src="/img/me.png" width="120" height="120")
+block prepend body
+  header.page-header
+    .page-header__container
+      h1 Hello, World!
+      p Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands.
+      img.profile-picture(alt="" src="/img/me.png" width="120" height="120")
 
 block content
   :md
