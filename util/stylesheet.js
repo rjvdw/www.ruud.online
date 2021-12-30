@@ -9,19 +9,37 @@ const { INPUT_DIR, OUTPUT_DIR } = require('./constants')
 const CSS_IN_DIR = path.join(__dirname, '..', INPUT_DIR)
 const CSS_OUT_DIR = path.join(__dirname, '..', OUTPUT_DIR)
 
-function stylesheet(file) {
+const sassOptions = {
+  loadPaths: [CSS_IN_DIR],
+  style: process.env.CONTEXT === 'production' ? 'compressed' : 'expanded',
+}
+
+const compile = file => sass.compile(file, {
+  ...sassOptions,
+}).css
+
+const compileString = (data, syntax) => sass.compileString(data, {
+  ...sassOptions,
+  syntax: syntax === 'sass' ? 'indented' : syntax,
+}).css
+
+exports.renderImport = (file) => {
   const inPath = path.join(CSS_IN_DIR, file)
   let outFile = file.replace(/\.s[ca]ss$/, '.css')
   const outPath = path.join(CSS_OUT_DIR, outFile)
 
-  const compiled = sass.compile(inPath, {
-    loadPaths: [CSS_IN_DIR],
-  })
   ensureOutDirExists(outPath)
-  fs.writeFileSync(outPath, compiled.css)
+  fs.writeFileSync(outPath, compile(inPath))
 
   return `<link rel="stylesheet" href="/${ outFile }">`
 }
+
+exports.renderCritical = (file) => {
+  const inPath = path.join(CSS_IN_DIR, file)
+  return `<style>${ compile(inPath) }</style>`
+}
+
+exports.renderInline = (data, syntax) => `<style>${ compileString(data, syntax) }</style>`
 
 function ensureOutDirExists(outPath) {
   try {
@@ -34,5 +52,3 @@ function ensureOutDirExists(outPath) {
     }
   }
 }
-
-module.exports = stylesheet

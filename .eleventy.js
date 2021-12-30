@@ -7,9 +7,6 @@ const { INPUT_DIR, OUTPUT_DIR } = require('./util/constants')
 const markdown = require('./util/md')
 const stylesheet = require('./util/stylesheet')
 
-global.md = text => markdown.render(text)
-global.stylesheet = stylesheet
-
 module.exports = (eleventyConfig) => {
   eleventyConfig.setLibrary('md', markdown)
 
@@ -20,8 +17,19 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.setPugOptions({
     filters: {
       md(text, _options) {
-        return md(text)
-      }
+        return markdown.render(text)
+      },
+      stylesheet(text, options) {
+        if (options.source) {
+          if (options.critical) {
+            return stylesheet.renderCritical(options.source)
+          } else {
+            return stylesheet.renderImport(options.source)
+          }
+        } else {
+          return stylesheet.renderInline(text, options.syntax || 'sass')
+        }
+      },
     },
     globals: ['md', 'stylesheet'],
   })
