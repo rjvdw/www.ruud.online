@@ -1,0 +1,8 @@
+---
+permalink: robots.txt
+---
+{%- if env.context === "production" -%}
+{%- else -%}
+User-agent: *
+Disallow: /
+{%- endif -%}
