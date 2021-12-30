@@ -25,7 +25,7 @@ function stylesheet(file) {
 
 function ensureOutDirExists(outPath) {
   try {
-    fs.mkdirSync(path.dirname(outPath))
+    fs.mkdirSync(path.dirname(outPath), { recursive: true })
   } catch (err) {
     if (err.code === 'EEXIST') {
       // already exists -- noop
