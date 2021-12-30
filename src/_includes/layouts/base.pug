@@ -15,27 +15,11 @@ html(lang="en")
 
     block seo
       block seo-meta
-        each value, key in meta
-          meta(name=key content=value)
-        if description
-          meta(name="description" content=description)
-
-      block seo-twitter
-        each value, key in twitter
-          meta(name=`twitter:${ key }` content=value)
-        meta(name="twitter:title" content=title)
-        if description
-          meta(name="twitter:description" content=description)
-
-      block seo-open-graph
-        each value, key in open_graph
-          meta(property=`og:${ key }` content=value)
-        meta(property="og:title" content=title)
-        if description
-          meta(property="og:description" content=description)
-
+        each attrs in seo.meta
+          meta&attributes(attrs)
       block seo-ld-json
-        script(type="application/ld+json")!= JSON.stringify(ld_schema)
+        if linked_data
+          script(type="application/ld+json")!= JSON.stringify(linked_data)
 
   body(class=cls)
     block nav
