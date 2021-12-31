@@ -13,7 +13,8 @@ html(lang="en")
       :stylesheet(source='css/visual-enhancements.sass' async)
 
     block header-scripts
-      script(async defer src="js/main.js")
+      script.
+        document.querySelectorAll('link[data-async-stylesheet="true"]').forEach(el => el.onload = () => el.rel = 'stylesheet')
 
     block seo
       block seo-meta

@@ -1,7 +1,7 @@
 'use strict'
 
 const cheerio = require('cheerio')
-const htmlmin = require("html-minifier")
+const htmlMinifier = require("html-minifier")
 
 const { INPUT_DIR, OUTPUT_DIR } = require('./util/constants')
 const markdown = require('./util/md')
@@ -48,7 +48,7 @@ module.exports = (eleventyConfig) => {
         a.attr('rel', rel.join(' '))
       })
 
-    return htmlmin.minify($.html(), {
+    return htmlMinifier.minify($.html(), {
       collapseWhitespace: true,
     })
   })
