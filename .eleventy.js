@@ -10,9 +10,8 @@ const stylesheet = require('./util/stylesheet')
 module.exports = (eleventyConfig) => {
   eleventyConfig.setLibrary('md', markdown)
 
-  eleventyConfig.addPassthroughCopy({
-    public: '.',
-  })
+  eleventyConfig.addPassthroughCopy({ 'public': '.' })
+  eleventyConfig.addPassthroughCopy({ 'src/js': 'js' })
 
   eleventyConfig.setPugOptions({
     filters: {
@@ -20,15 +19,7 @@ module.exports = (eleventyConfig) => {
         return markdown.render(text)
       },
       stylesheet(text, options) {
-        if (options.source) {
-          if (options.critical) {
-            return stylesheet.renderCritical(options.source)
-          } else {
-            return stylesheet.renderImport(options.source)
-          }
-        } else {
-          return stylesheet.renderInline(text, options.syntax || 'sass')
-        }
+        return stylesheet(text, options)
       },
     },
     globals: ['md', 'stylesheet'],

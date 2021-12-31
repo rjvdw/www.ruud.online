@@ -10,8 +10,10 @@ html(lang="en")
 
     block header-styles
       :stylesheet(source='css/main.sass' critical)
+      :stylesheet(source='css/visual-enhancements.sass' async)
 
     block header-scripts
+      script(async defer src="js/main.js")
 
     block seo
       block seo-meta
