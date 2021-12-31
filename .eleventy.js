@@ -1,14 +1,14 @@
 'use strict'
 
-const { INPUT_DIR, OUTPUT_DIR } = require('./util/constants')
-const {linkProtection, minify, csp} = require('./util/htmlPostProcessor')
+const { INPUT_DIR, OUTPUT_DIR, STATIC_DIR } = require('./util/constants')
+const { linkProtection, minify, csp } = require('./util/htmlPostProcessor')
 const markdown = require('./util/md')
 const stylesheet = require('./util/stylesheet')
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.setLibrary('md', markdown)
 
-  eleventyConfig.addPassthroughCopy({ 'public': '.' })
+  eleventyConfig.addPassthroughCopy({ [STATIC_DIR]: '.' })
   eleventyConfig.addPassthroughCopy({ 'src/js': 'js' })
 
   eleventyConfig.setPugOptions({
