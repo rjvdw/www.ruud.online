@@ -1,7 +1,7 @@
 'use strict'
 
 const { INPUT_DIR, OUTPUT_DIR } = require('./util/constants')
-const htmlPostProcessor = require('./util/htmlPostProcessor')
+const {linkProtection, minify, csp} = require('./util/htmlPostProcessor')
 const markdown = require('./util/md')
 const stylesheet = require('./util/stylesheet')
 
@@ -22,7 +22,9 @@ module.exports = (eleventyConfig) => {
     },
   })
 
-  eleventyConfig.addTransform('html-post-processing', htmlPostProcessor)
+  eleventyConfig.addTransform('link-protection', linkProtection)
+  eleventyConfig.addTransform('minify', minify)
+  eleventyConfig.addTransform('csp', csp)
 
   return ({
     dir: {

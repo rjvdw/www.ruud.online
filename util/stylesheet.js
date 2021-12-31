@@ -25,7 +25,7 @@ module.exports = (text, options) => {
 
 const sassOptions = {
   loadPaths: [CSS_IN_DIR],
-  style: process.env.CONTEXT === 'production' ? 'compressed' : 'expanded',
+  style: 'compressed',
 }
 
 const compile = file => sass.compile(file, {

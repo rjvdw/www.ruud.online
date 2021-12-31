@@ -1,9 +1,10 @@
 'use strict'
 
+const crypto = require('crypto')
 const cheerio = require('cheerio')
 const htmlMinifier = require('html-minifier')
 
-module.exports = (content, outputPath) => {
+exports.linkProtection = (content, outputPath) => {
   if (!outputPath || !outputPath.endsWith('.html')) {
     return content
   }
@@ -26,7 +27,33 @@ module.exports = (content, outputPath) => {
       a.attr('rel', rel.join(' '))
     })
 
-  return htmlMinifier.minify($.html(), {
+  return $.html()
+}
+
+exports.minify = (content, outputPath) => {
+  if (!outputPath || !outputPath.endsWith('.html')) {
+    return content
+  }
+
+  return htmlMinifier.minify(content, {
     collapseWhitespace: true,
   })
+}
+
+exports.csp = (content, outputPath) => {
+  if (!outputPath || !outputPath.endsWith('.html')) {
+    return content
+  }
+
+  const $ = cheerio.load(content)
+
+  // compute csp hashes
+  $('script:where(:not([type]), [type="text/javascript"]):not([src]), style')
+    .each((_i, elem) => {
+      const $elem = $(elem)
+      const hash = `sha256-${ crypto.createHash('sha256').update($elem.html()).digest('base64') }`
+      console.log('[csp hash][%s] %s', elem.tagName, hash)
+    })
+
+  return content
 }
