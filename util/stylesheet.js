@@ -47,7 +47,7 @@ function renderImport(file, loadAsync, rest) {
 
   if (loadAsync) {
     return `
-      <link data-async-stylesheet="true" rel="preload" as="style" href="/${ outFile }"${ attrs(rest) }>
+      <link rel="preload" as="style" href="/${ outFile }"${ attrs(rest) }>
       <noscript><link rel="stylesheet" href="/${ outFile }"${ attrs(rest) }></noscript>
     `
   } else {
