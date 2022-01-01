@@ -4,7 +4,10 @@ const path = require('path')
 const { INPUT_DIR, OUTPUT_DIR, STATIC_DIR } = require('./util/constants')
 const { linkProtection, minify, csp } = require('./util/htmlPostProcessor')
 const markdown = require('./util/md')
-const stylesheet = require('./util/stylesheet')
+const { stylesheet, compileAllStylesheets, stylesheetWatcher } = require('./util/stylesheet')
+
+// Compile all the stylesheets.
+compileAllStylesheets().catch(err => console.error(err))
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.setLibrary('md', markdown)
@@ -26,6 +29,16 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addTransform('link-protection', linkProtection)
   eleventyConfig.addTransform('minify', minify)
   eleventyConfig.addTransform('csp', csp)
+
+  eleventyConfig.setBrowserSyncConfig({
+    files: path.join(__dirname, OUTPUT_DIR, 'css', '**', '*.css'),
+    callbacks: {
+      ready() {
+        // start watching for changes in the stylesheets
+        stylesheetWatcher.start()
+      }
+    }
+  })
 
   return ({
     dir: {
