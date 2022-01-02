@@ -12,9 +12,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@11ty/eleventy@npm:1.0.0-beta.9":
-  version: 1.0.0-beta.9
-  resolution: "@11ty/eleventy@npm:1.0.0-beta.9"
+"@11ty/eleventy@npm:1.0.0-canary.49":
+  version: 1.0.0-canary.49
+  resolution: "@11ty/eleventy@npm:1.0.0-canary.49"
   dependencies:
     "@11ty/dependency-tree": ^2.0.0
     "@iarna/toml": ^2.2.5
@@ -50,7 +50,7 @@ __metadata:
     slugify: ^1.6.4
   bin:
     eleventy: cmd.js
-  checksum: 15b1d8a7e33ca8a87539a3bafe8305ad6876fc73bdd39006adbd432771886c171db812a893d007fd7d3cac1cf28a733c1cad4198d2b4156ec792d0c4e07b4fab
+  checksum: 6966824f9af1677b43f0e19e6bcc3a0c17e8d3a41fdc379f3e886d521c79605fba69f03d03b8257997e9bf29d0486eb147e43f0dff6eef81772491f5aee907b5
   languageName: node
   linkType: hard
 
@@ -3182,16 +3182,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.45.1":
-  version: 1.45.1
-  resolution: "sass@npm:1.45.1"
+"sass@npm:^1.45.2":
+  version: 1.45.2
+  resolution: "sass@npm:1.45.2"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 5c310b9d6260a304520678442f5814bd54c8068b659f54ae51ccb9156168811abf4e48eae4f857a5feb2958c4c07eacd5812e28018749ab25fdb40200c5bdd65
+  checksum: 7041ae5532b2a5dec10fe10d66cf2d1fc52f3f80ecedb5a6ffffdc5545eb996c12d3e749131778a765ada445f2a47671ab1bf13bf736cbbf9e71f29c592cb41d
   languageName: node
   linkType: hard
 
@@ -3802,11 +3802,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "www.ruud.online@workspace:."
   dependencies:
-    "@11ty/eleventy": 1.0.0-beta.9
+    "@11ty/eleventy": 1.0.0-canary.49
     cheerio: ^1.0.0-rc.10
     html-minifier: ^4.0.0
     markdown-it: ^12.3.0
-    sass: ^1.45.1
+    sass: ^1.45.2
   languageName: unknown
   linkType: soft
 
