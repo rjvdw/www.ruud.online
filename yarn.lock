@@ -12,9 +12,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@11ty/eleventy@npm:1.0.0-canary.49":
-  version: 1.0.0-canary.49
-  resolution: "@11ty/eleventy@npm:1.0.0-canary.49"
+"@11ty/eleventy@npm:1.0.0-canary.50":
+  version: 1.0.0-canary.50
+  resolution: "@11ty/eleventy@npm:1.0.0-canary.50"
   dependencies:
     "@11ty/dependency-tree": ^2.0.0
     "@iarna/toml": ^2.2.5
@@ -31,9 +31,9 @@ __metadata:
     handlebars: ^4.7.7
     is-glob: ^4.0.3
     kleur: "^4.1.4 "
-    liquidjs: ^9.30.0
+    liquidjs: ^9.32.0
     lodash: ^4.17.21
-    luxon: ^2.2.0
+    luxon: ^2.3.0
     markdown-it: ^12.3.0
     minimist: ^1.2.5
     moo: ^0.5.1
@@ -47,10 +47,10 @@ __metadata:
     pug: ^3.0.2
     recursive-copy: ^2.0.13
     semver: ^7.3.5
-    slugify: ^1.6.4
+    slugify: ^1.6.5
   bin:
     eleventy: cmd.js
-  checksum: 6966824f9af1677b43f0e19e6bcc3a0c17e8d3a41fdc379f3e886d521c79605fba69f03d03b8257997e9bf29d0486eb147e43f0dff6eef81772491f5aee907b5
+  checksum: 63da439877da4bc4d704393d8e7542dcdca513a21f2eb3b98c05f3d180e1db9a80343dde26a2ed1b723739a9408e2c1fc0f0b2b3f8e900804dd7f32cee3f1089
   languageName: node
   linkType: hard
 
@@ -2139,13 +2139,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"liquidjs@npm:^9.30.0":
-  version: 9.31.0
-  resolution: "liquidjs@npm:9.31.0"
+"liquidjs@npm:^9.32.0":
+  version: 9.32.0
+  resolution: "liquidjs@npm:9.32.0"
   bin:
     liquid: bin/liquid.js
     liquidjs: bin/liquid.js
-  checksum: 3124aeb95d1cc14c4a2b19c900325dc095dc6e0981045acd9cebb54b12697b05eede60df16e2cd653d4580430bc3a266f77bcbea750c9bd62d0f1b1d3d74dc25
+  checksum: f26aaf4f9a54dba4edd874d877a44517eccf993ef9400beb04f5018ba596af4b31d726447fdac6aaee92f642b22064339739b0336d9c2153d86bfe0d92494a43
   languageName: node
   linkType: hard
 
@@ -2219,10 +2219,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "luxon@npm:2.2.0"
-  checksum: 69c715529b6aaa1f96fad8edfe2681004a1f314191ac243804a90c023fc533b5e3f0b9d34d5c86555d2a41297ddbee96a67a7cbb185f20243e66b7c6d4b809ac
+"luxon@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "luxon@npm:2.3.0"
+  checksum: 3d00e1b812a31082cf0d97e844d7354c93891fbd14795756f396ee5656387e21d2c862edb841516114eb391f8314a6cf3848799acc6d59cf9560c88c909b91f0
   languageName: node
   linkType: hard
 
@@ -2262,6 +2262,21 @@ __metadata:
   bin:
     markdown-it: bin/markdown-it.js
   checksum: 27af2c2d0ee564ca2bb417514414a4d202a5caa966361fb88525f8a53740a734389f1d59b7d53ac66574b659628d03914b43eda6d58b7eb5ce9c41a758c84fb1
+  languageName: node
+  linkType: hard
+
+"markdown-it@npm:^12.3.2":
+  version: 12.3.2
+  resolution: "markdown-it@npm:12.3.2"
+  dependencies:
+    argparse: ^2.0.1
+    entities: ~2.1.0
+    linkify-it: ^3.0.1
+    mdurl: ^1.0.1
+    uc.micro: ^1.0.5
+  bin:
+    markdown-it: bin/markdown-it.js
+  checksum: 890555711c1c00fa03b936ca2b213001a3b9b37dea140d8445ae4130ce16628392aad24b12e2a0a9935336ca5951f2957a38f4e5309a2e38eab44e25ff32a41e
   languageName: node
   linkType: hard
 
@@ -3182,16 +3197,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.45.2":
-  version: 1.45.2
-  resolution: "sass@npm:1.45.2"
+"sass@npm:^1.47.0":
+  version: 1.47.0
+  resolution: "sass@npm:1.47.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 7041ae5532b2a5dec10fe10d66cf2d1fc52f3f80ecedb5a6ffffdc5545eb996c12d3e749131778a765ada445f2a47671ab1bf13bf736cbbf9e71f29c592cb41d
+  checksum: e725a37eb7360ad5f96e6e6209d81beeb22ecec70c6f01a1acdf237dbbb6e05e50cc0a0851b16ee1dbc63fbdd7a90405cbbd9911f56b2dba3d5f934f7e291f10
   languageName: node
   linkType: hard
 
@@ -3329,10 +3344,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"slugify@npm:^1.6.4":
-  version: 1.6.4
-  resolution: "slugify@npm:1.6.4"
-  checksum: b72baa37e2d9a389032633f3a9c51f8727827dcd1790a3e7f75e43986b0f1da9feba8004d615543b009d096e416688328995717303f243e1536dc417ed23ccc1
+"slugify@npm:^1.6.5":
+  version: 1.6.5
+  resolution: "slugify@npm:1.6.5"
+  checksum: a955a1b600201030f4c1daa9bb74a17d4402a0693fc40978bbd17e44e64fd72dad3bac4037422aa8aed55b5170edd57f3f4cd8f59ba331f5cf0f10f1a7795609
   languageName: node
   linkType: hard
 
@@ -3802,11 +3817,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "www.ruud.online@workspace:."
   dependencies:
-    "@11ty/eleventy": 1.0.0-canary.49
+    "@11ty/eleventy": 1.0.0-canary.50
     cheerio: ^1.0.0-rc.10
     html-minifier: ^4.0.0
-    markdown-it: ^12.3.0
-    sass: ^1.45.2
+    markdown-it: ^12.3.2
+    sass: ^1.47.0
   languageName: unknown
   linkType: soft
 
