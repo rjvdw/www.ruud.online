@@ -9,8 +9,8 @@ This website is generated with [11ty].
 In order to run the server locally, run the following commands:
 
 ```bash
-yarn
-yarn start
+npm install
+npm start
 ```
 
 ## SASS processing

@@ -6,13 +6,12 @@
   "author": "Ruud van der Weide <rj@rdcl.dev>",
   "license": "MIT",
   "private": true,
-  "packageManager": "yarn@3.1.1",
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve"
   },
   "devDependencies": {
-    "@11ty/eleventy": "1.0.0",
+    "@11ty/eleventy": "^1.0.0",
     "cheerio": "^1.0.0-rc.10",
     "html-minifier": "^4.0.0",
     "markdown-it": "^12.3.2",
