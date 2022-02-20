@@ -19,4 +19,13 @@ When the site is built with `CSS_MODE="production"`, all critical CSS will be in
 If this environment variable is absent or has a different value, all CSS will be loaded normally.
 When the CSS is loaded normally, BrowserSync can perform auto reloading.
 
+## Run tests
+
+To run the tests, first build the site.
+
+```bash
+CSS_MODE=production npm run build
+npm test
+```
+
 [11ty]: https://www.11ty.dev/
