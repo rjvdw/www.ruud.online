@@ -1,0 +1,36 @@
+extends _includes/layouts/base
+
+block append header-styles
+  :stylesheet(source='css/resume.sass' critical)
+
+block content
+  header.resume-header
+    h1.resume-header__name Ruud van der Weide
+    hr.resume-header__separator(role="presentation")
+    h2.resume-header__role Lead Software Engineer
+
+    section.resume-header__picture-container
+      img.resume-header__picture(
+        src="/img/me.png"
+        alt="My profile picture"
+        width="240"
+        height="240"
+      )
+
+    section.resume-header__summary
+      h2.resume-header__summary-header Summary
+      dl.resume-header__summary-details
+        dt Born
+        dd October 1987
+
+        dt From
+        dd Nĳmegen, the Netherlands
+
+  each item in experience
+    hr.resume-separator(role="presentation")
+
+    section.resume-experience
+      header.resume-experience__header
+        h2.resume-experience__role #{item.role}
+        h3.resume-experience__at #{item.at} (#{item.location})
+        p.resume-experience__when #{item.startDate} - #{item.endDate || 'present'}

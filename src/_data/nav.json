@@ -1,3 +1,4 @@
 [
-  { "tab": "home", "text": "Home", "path": "/" }
+  { "tab": "home", "text": "Home", "path": "/" },
+  { "tab":  "resume", "text": "Resume", "path": "/resume" }
 ]
