@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home page matches snapshot 1`] = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1"
+    >
+    <meta name="theme-color"
+          content="#474069"
+    >
+    <meta name="color-scheme"
+          content="light dark"
+    >
+    <title>
+      ruud.online
+    </title>
+    <style>
+      html{box-sizing:border-box;font-family:sans-serif;font-size:16px;text-rendering:optimizeLegibility;margin:0;padding:0;width:100%}body{background-color:#f3f3f3;color:#333;margin:0;padding:0;width:100%}@media(prefers-color-scheme: dark){body{background-color:#111;color:#aaa}}*{box-sizing:inherit}a{color:#337ab7;text-decoration:none}a:hover,a:focus{color:#23527c;text-decoration:underline}li+li{margin-top:1rem}h1,h2,h3,h4,h5,h6{font-family:sans-serif;font-weight:700}h1{font-size:2rem;padding:0;margin:1.5rem 0 .75rem}h2{font-size:1.75rem;padding:0;margin:1.5rem 0 .75rem}p{margin:0 0 .75rem;padding:0}p:last-child{margin-bottom:0}ol,ul{margin-top:0;margin-bottom:.75rem}.page-nav{background-color:#474069;color:#ddd}.page-nav__container{display:flex;margin:0 auto;padding:0;list-style:none;max-width:52rem;width:calc(100% - 1rem)}.page-nav__item{cursor:default;display:inline-flex;margin:0;padding:0}.page-nav__item:hover,.page-nav__item:focus{color:#fff}.page-nav__item--active{background-color:#1c192a;color:#fff}.page-nav__item-link{color:inherit;text-decoration:none;padding:1rem}.page-nav__item-link:hover,.page-nav__item-link:focus{color:inherit;text-decoration:none}.page-header{background-color:#1c192a;color:#ddd;font-size:1.5rem;margin:0 0 2.5rem;padding:1rem 0 5rem}@media(min-width: 45rem){.page-header{padding-top:3rem}}.page-header__container{margin:0 auto;padding:0 .5rem;max-width:52rem;width:calc(100% - 1rem);position:relative}@media(min-width: 35rem){.page-header__container{padding:0 3rem}}@media(min-width: 45rem){.page-header__container{padding:0 5rem}}.page-header__profile-picture{clip-path:circle(50% at center);position:absolute;right:1rem;bottom:-8rem;width:7.5rem;height:7.5rem}.page-main{margin:0 auto;padding:.5rem;max-width:52rem;width:calc(100% - 1rem)}.social-links{display:flex;list-style:none;padding:0;margin:0 -0.5rem}.social-links__item{padding:0;margin:0 .5rem}.social-links__link{color:#333;display:flex;transition:color .4s ease}@media(prefers-color-scheme: dark){.social-links__link{color:#ccc}}.social-links__link:hover,.social-links__link:focus{color:#746ba4}.social-links__icon{color:inherit;width:3rem;height:3rem;fill:currentColor}
+    </style>
+    <link rel="preload"
+          as="style"
+          href="/css/visual-enhancements.css"
+    >
+    <noscript>
+      <link rel="stylesheet"
+            href="/css/visual-enhancements.css"
+      >
+    </noscript>
+    <script>
+      document.querySelectorAll('link[rel="preload"][as="style"]').forEach(el => el.onload = () => el.rel = 'stylesheet')
+    </script>
+    <meta name="author"
+          content="Ruud van der Weide <rj@rdcl.dev>"
+    >
+    <meta name="description"
+          content="Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands."
+    >
+    <meta name="google-site-verification"
+          content="mGOj_7h6LAOAYpcB1MxuJFv6WopZ2_LhK-bJtI-klyM"
+    >
+    <meta name="msvalidate.01"
+          content="D17D87D5B648EB4375349812B1FA3553"
+    >
+    <meta property="og:description"
+          content="Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands."
+    >
+    <meta property="og:image"
+          content="https://www.ruud.online/me.jpg"
+    >
+    <meta property="og:title"
+          content="ruud.online"
+    >
+    <meta property="og:type"
+          content="website"
+    >
+    <meta name="robots"
+          content="index,follow"
+    >
+    <meta name="twitter:card"
+          content="summary"
+    >
+    <meta name="twitter:creator"
+          content="@rdcl_dev"
+    >
+    <meta name="twitter:description"
+          content="Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands."
+    >
+    <meta name="twitter:image"
+          content="https://www.ruud.online/me.jpg"
+    >
+    <meta name="twitter:site"
+          content="@rdcl_dev"
+    >
+    <meta name="twitter:title"
+          content="ruud.online"
+    >
+    <script type="application/ld+json">
+      {"@context":"http://schema.org","@type":"Person","name":"Ruud van der Weide","email":["rj@rdcl.dev"],"url":"https://www.ruud.online","image":"https://www.ruud.online/me.jpg","sameAs":["https://twitter.com/rdcl_dev","https://github.com/rjvdw","https://keybase.io/rdcl","https://www.npmjs.com/~rdcl","https://nl.linkedin.com/in/rjvanderweide"]}
+    </script>
+  </head>
+  <body class="home">
+    <nav class="page-nav">
+      <ul class="page-nav__container">
+        <li class="page-nav__item page-nav__item--active">
+          <span class="page-nav__item-link">
+            Home
+          </span>
+        </li>
+      </ul>
+    </nav>
+    <header class="page-header">
+      <div class="page-header__container">
+        <h1>
+          Hello, World!
+        </h1>
+        <p>
+          Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands.
+        </p>
+        <div class="page-header__profile-picture"
+             role="presentation"
+        >
+        </div>
+      </div>
+    </header>
+    <main class="page-main">
+      <p>
+        I have been developing software professionally since 2012. In my spare time I also like working on side projects, learning new programming languages, and trying out new web frameworks.
+      </p>
+      <p>
+        Some (programming) languages I work with are: Java, Rust, Kotlin, Scala, Python, TypeScript, JavaScript/Node.js, HTML, CSS, C#, Ruby and Go.
+      </p>
+      <h2>
+        Certificates
+      </h2>
+      <ul>
+        <li>
+          <a href="https://www.credly.com/earner/earned/badge/8d179b16-64b2-4abe-8978-319ed8d40483"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            Oracle Certified Associate, Java SE 8 Programmer
+          </a>
+        </li>
+        <li>
+          <a href="https://www.credly.com/earner/earned/badge/5087e8f9-d41d-453b-b16e-6fed220f3b0d"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            Oracle Certified Professional, Java SE 8 Programmer
+          </a>
+        </li>
+        <li>
+          <a href="https://www.coursera.org/account/accomplishments/verify/7L9QPDZF4ESV"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            Coursera – Functional Programming Principles in Scala
+          </a>
+        </li>
+        <li>
+          <a href="https://www.coursera.org/account/accomplishments/verify/DGTMN79P7VWJ"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            Coursera – Functional Program Design in Scala
+          </a>
+        </li>
+        <li>
+          <a href="http://bcert.me/skkgftvcl"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            Certified ScrumMaster
+          </a>
+        </li>
+      </ul>
+      <h2>
+        Social
+      </h2>
+      <ul class="social-links">
+        <li class="social-links__item">
+          <a class="social-links__link"
+             href="https://twitter.com/rdcl_dev"
+             aria-label="My Twitter profile"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            <svg class="social-links__icon"
+                 role="img"
+                 width="48"
+                 height="48"
+                 viewbox="12 12 24 24"
+            >
+              <path d="M33.5 12h-19a2.507 2.507 0 0 0-2.5 2.5v19c0 1.375 1.125 2.5 2.5 2.5h19c1.375 0 2.5-1.125 2.5-2.5v-19c0-1.375-1.125-2.5-2.5-2.5zm-2.357 8.908c.006.153.01.309.01.464 0 4.738-3.606 10.2-10.2 10.2-2.025 0-3.909-.593-5.495-1.611a7.196 7.196 0 0 0 5.307-1.483 3.588 3.588 0 0 1-3.349-2.489 3.669 3.669 0 0 0 1.619-.063 3.584 3.584 0 0 1-2.876-3.516v-.044a3.529 3.529 0 0 0 1.624.446 3.582 3.582 0 0 1-1.11-4.784 10.177 10.177 0 0 0 7.39 3.745 3.584 3.584 0 0 1 6.109-3.269 7.163 7.163 0 0 0 2.276-.871 3.584 3.584 0 0 1-1.576 1.983 7.048 7.048 0 0 0 2.059-.563 7.333 7.333 0 0 1-1.788 1.855z">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__link"
+             href="https://github.com/rjvdw"
+             aria-label="My GitHub profile"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            <svg class="social-links__icon"
+                 role="img"
+                 width="48"
+                 height="48"
+                 viewbox="12 12 24 24"
+            >
+              <path d="M33.5 12h-19a2.5 2.5 0 0 0-2.5 2.5v19a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-19a2.5 2.5 0 0 0-2.5-2.5zM22 28h-2v-3h2v3zm3 1h-2v-1h2v1zm3-1h-2v-3h2v3zm-1-9l4-2 .062 4c.723.867.938 1.782.938 3v1c0 1.844-1.01 3.437-2.494 4.304.304-.351.494-.803.494-1.304v-2a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v2c0 .501.19.953.494 1.304C17.01 28.437 16 26.844 16 25v-1c0-1.143.355-2.158 1-3v-4l4 1.998L27 19z">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__link"
+             href="https://nl.linkedin.com/in/rjvanderweide"
+             aria-label="My LinkedIn profile"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            <svg class="social-links__icon"
+                 role="img"
+                 width="48"
+                 height="48"
+                 viewbox="12 12 24 24"
+            >
+              <path d="M33.5 12h-19a2.507 2.507 0 0 0-2.5 2.5v19c0 1.375 1.125 2.5 2.5 2.5h19c1.375 0 2.5-1.125 2.5-2.5v-19c0-1.375-1.125-2.5-2.5-2.5zm-15 4.734a1.766 1.766 0 1 1 0 3.533 1.766 1.766 0 0 1 0-3.533zm1.594 14.474h-3.116v-10.24h3.116v10.24zm11.906 0h-3.111v-5.092c0-1.163-.023-2.657-1.619-2.657-1.621 0-2.204 1.266-2.204 2.573v5.176h-3.113v-10.24h2.988v1.369h.042c.416-.787 1.768-1.618 3.283-1.618 3.151 0 3.734 2.075 3.734 4.774v5.715z">
+              </path>
+            </svg>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__link"
+             href="mailto:rj@rdcl.dev"
+             aria-label="My e-mail address"
+          >
+            <svg class="social-links__icon"
+                 role="img"
+                 width="48"
+                 height="48"
+                 viewbox="12 12 24 24"
+            >
+              <path d="M24.195 21.243c-.541 0-1.002.342-1.41 1.046-.422.726-.636 1.438-.636 2.115 0 .385.086.695.255.924.159.214.38.317.676.317.54 0 1-.442 1.368-1.314.392-.928.59-1.662.59-2.183a.936.936 0 0 0-.232-.654c-.15-.169-.35-.251-.611-.251z">
+              </path>
+              <path d="M33.5 12h-19a2.507 2.507 0 0 0-2.5 2.5v19c0 1.375 1.125 2.5 2.5 2.5h19c1.375 0 2.5-1.125 2.5-2.5v-19c0-1.375-1.125-2.5-2.5-2.5zm-6.812 13.438c.082.108.215.16.407.16.44 0 .9-.308 1.368-.915.48-.625.724-1.473.724-2.518 0-1.554-.647-2.638-1.978-3.315-.841-.432-1.802-.649-2.856-.649-1.938 0-3.516.599-4.687 1.78-1.053 1.065-1.587 2.36-1.587 3.848 0 1.65.623 2.976 1.852 3.938 1.097.858 2.457 1.293 4.043 1.293a7.79 7.79 0 0 0 3.062-.603 8.337 8.337 0 0 0 1.608-.907l.381-.273.86 1.32-.146.113a9.75 9.75 0 0 1-2.777 1.512 9.408 9.408 0 0 1-3.104.521c-2.496 0-4.459-.791-5.837-2.35-1.143-1.293-1.722-2.847-1.722-4.617 0-1.981.724-3.685 2.149-5.062 1.494-1.451 3.431-2.188 5.756-2.188 1.896 0 3.49.506 4.74 1.503 1.33 1.062 2.005 2.49 2.005 4.243 0 1.38-.427 2.582-1.269 3.574-.85 1.001-1.839 1.508-2.939 1.508-.597 0-1.066-.176-1.396-.521a1.76 1.76 0 0 1-.444-.732 3.398 3.398 0 0 1-.449.512c-.535.487-1.188.734-1.938.734-.77 0-1.418-.281-1.93-.835-.508-.547-.766-1.315-.766-2.284 0-1.107.381-2.158 1.13-3.122.763-.978 1.715-1.475 2.83-1.475.672 0 1.205.192 1.584.571.127.13.238.356.331.495l.216-.697h2.089l-1.205 4.066c-.068.24-.121.405-.159.559 0 0-.08.338-.08.438a.6.6 0 0 0 .134.375z">
+              </path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <h2>
+        Other Links
+      </h2>
+      <ul>
+        <li>
+          <a href="https://gist.github.com/rjvdw"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            My gists on GitHub
+          </a>
+        </li>
+        <li>
+          <a href="/0AE37E45.asc">
+            My public GPG key
+          </a>
+        </li>
+        <li>
+          <a href="https://todoist.com/r/ruud_van_der_weide_amadng"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            My Todoist referral link
+          </a>
+        </li>
+        <li>
+          <a href="https://ref.fm/u10211109"
+             target="_blank"
+             rel=" noopener noreferrer"
+          >
+            My Fastmail referral link
+          </a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
+`;

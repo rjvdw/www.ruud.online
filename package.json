@@ -8,13 +8,21 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "test": "jest"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "cheerio": "^1.0.0-rc.10",
     "html-minifier": "^4.0.0",
+    "jest": "^27.5.1",
+    "jest-serializer-html": "^7.1.0",
     "markdown-it": "^12.3.2",
     "sass": "^1.49.8"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-serializer-html"
+    ]
   }
 }
