@@ -7,7 +7,7 @@
   Strict-Transport-Security: max-age=63072000; preload
   Permissions-Policy: interest-cohort=()
   Referrer-Policy: no-referrer
-  Content-Security-Policy: default-src 'self' cloudfront.net *.cloudfront.net; style-src 'self' cloudfront.net *.cloudfront.net 'sha256-BDv77XnlMgZq3wpR0hyWO0j9Ko9xzZ4KnP8bojvzmto='; script-src 'self' cloudfront.net *.cloudfront.net 'sha256-tY/GBVQ5CIMQe/TPJdQdq21RsEfMW7EsUzmB4KIPark='
+  Content-Security-Policy: default-src 'self' cloudfront.net *.cloudfront.net; style-src 'self' cloudfront.net *.cloudfront.net 'sha256-AGSopGXI0j6Ne5ua5NY7W4MLIfnq58D7VAlI7vT0lmQ='; script-src 'self' cloudfront.net *.cloudfront.net 'sha256-tY/GBVQ5CIMQe/TPJdQdq21RsEfMW7EsUzmB4KIPark='
 
 /favicon.ico
   Cache-Control: public, max-age=31536000, immutable
