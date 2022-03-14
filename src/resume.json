@@ -1,0 +1,63 @@
+{
+  "title": "resume | ruud.online",
+  "description": "My professional resume, describing my work experience throughout the years.",
+  "image": "https://www.ruud.online/me.jpg",
+  "cls": "resume",
+  "tab": "resume",
+  "experience": [
+    {
+      "role": "Software engineer",
+      "at": "Quintor",
+      "location": "Amersfoort",
+      "startDate": "March 2017"
+    },
+    {
+      "role": "Lead software engineer",
+      "at": "DICTU",
+      "location": "Den Haag",
+      "startDate": "March 2022"
+    },
+    {
+      "role": "Lead software engineer, Scrum master",
+      "at": "Rabobank",
+      "location": "Utrecht",
+      "startDate": "July 2021",
+      "endDate": "Februari 2022"
+    },
+    {
+      "role": "Lead software engineer",
+      "at": "ING",
+      "location": "Amsterdam",
+      "startDate": "July 2019",
+      "endDate": "June 2021"
+    },
+    {
+      "role": "Lead software engineer",
+      "at": "ING",
+      "location": "Amsterdam",
+      "startDate": "December 2018",
+      "endDate": "June 2019"
+    },
+    {
+      "role": "Lead software engineer",
+      "at": "ING",
+      "location": "Brussels",
+      "startDate": "June 2018",
+      "endDate": "December 2018"
+    },
+    {
+      "role": "Lead software engineer",
+      "at": "Kramp",
+      "location": "Varsseveld",
+      "startDate": "April 2017",
+      "endDate": "June 2018"
+    },
+    {
+      "role": "Software engineer",
+      "at": "e*cube",
+      "location": "Nĳmegen",
+      "startDate": "March 2012",
+      "endDate": "Februari 2017"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+@import '../vars'
+
+.resume-header
+  display: grid
+  gap: 0
+  grid-template:
+    areas: "name name" "separator picture" "role picture" "summary picture"
+    columns: 1fr auto
+    rows: auto auto auto 1fr
+  margin: 1.5rem 0 .75rem
+
+  &__name
+    grid-area: name
+    margin: 0
+
+  &__separator
+    grid-area: separator
+    display: block
+    content: ' '
+
+    height: 0
+    width: 5rem
+    overflow: hidden
+    margin: 1rem 0
+
+    border: none
+    border-bottom: thin solid $base-foreground-color
+    @media (prefers-color-scheme: dark)
+      border-bottom-color: $base-foreground-color-dark
+
+    font:
+      size: 1rem
+      weight: normal
+
+  &__role
+    grid-area: role
+    margin: 0 0 1rem
+    padding: 0
+    font:
+      size: 1.2rem
+      weight: normal
+
+  &__picture-container
+    grid-area: picture
+
+  &__picture
+    width: 12rem
+    height: 12rem
+
+  &__summary
+    grid-area: summary
+
+  &__summary-header
+    font:
+      size: 1.1rem
+
+  &__summary-details
+    display: grid
+    row-gap: .5rem
+    column-gap: 2rem
+    grid-template:
+      columns: auto 1fr
+
+    margin: 0
+    padding: 0
+
+    dt, dd
+      margin: 0
+      padding: 0
+
+.resume-separator
+  display: block
+  width: 50%
+  height: 0
+  margin: 1rem auto
+  border: none
+  border-bottom: thin solid $base-foreground-color
+  @media (prefers-color-scheme: dark)
+    border-bottom-color: $base-foreground-color-dark
+
+.resume-experience
+  margin: .5rem 0 1rem
+
+  &__role
+    font-size: 1.2rem
+    margin: 0 0 .5rem
+
+  &__at
+    font:
+      size: 1rem
+      weight: normal
+    margin: 0 0 .5rem
+
+  &__when
+    opacity: .7
+    font-size: .95rem
