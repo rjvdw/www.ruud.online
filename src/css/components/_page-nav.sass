@@ -1,15 +1,15 @@
-@import '../vars'
+@use '../vars'
 
 .page-nav
-  background-color: $theme-color-1
-  color: $theme-foreground-color-1
+  background-color: vars.$theme-color-1
+  color: vars.$theme-foreground-color-1
 
   &__container
     display: flex
     margin: 0 auto
     padding: 0
     list-style: none
-    max-width: $page-max-width
+    max-width: vars.$page-max-width
     width: calc(100% - 1rem)
 
   &__item
@@ -20,11 +20,11 @@
 
     &:hover,
     &:focus
-      color: $theme-foreground-color-1--active
+      color: vars.$theme-foreground-color-1--active
 
     &--active
-      background-color: $theme-color-2
-      color: $theme-foreground-color-2--active
+      background-color: vars.$theme-color-2
+      color: vars.$theme-foreground-color-2--active
 
   &__item-link
     color: inherit

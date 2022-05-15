@@ -1,8 +1,8 @@
-@import '../vars'
+@use '../vars'
 
 .page-header
-  background-color: $theme-color-2
-  color: $theme-foreground-color-2
+  background-color: vars.$theme-color-2
+  color: vars.$theme-foreground-color-2
   font-size: 1.5rem
   margin: 0 0 2.5rem
   padding: 1rem 0 5rem
@@ -13,7 +13,7 @@
   &__container
     margin: 0 auto
     padding: 0 .5rem
-    max-width: $page-max-width
+    max-width: vars.$page-max-width
     width: calc(100% - 1rem)
     position: relative
 
