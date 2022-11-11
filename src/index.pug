@@ -26,10 +26,16 @@ block content
   ul.social-links
     each item in social
       li.social-links__item
-        a.social-links__link(href=item.href)
-          svg.social-links__icon(role="img" width="48" height="48" viewBox="12 12 24 24" aria-label=item.label)
-            each path in item.paths
-              path(d=path)
+        a.social-links__link(href=item.href rel="me")
+          svg.social-links__icon(
+            role="img"
+            width=item.icon.width
+            height=item.icon.height
+            viewBox=item.icon.viewbox
+            aria-label=item.label
+          )
+            each child in item.icon.children
+              != child
 
   :md
     ## Other Links

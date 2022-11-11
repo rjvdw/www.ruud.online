@@ -9,14 +9,18 @@ module.exports = {
     let meta = {}
 
     for (const [name, content] of Object.entries(metaDefault)) {
-      meta[name] = { name, content }
+      if (typeof content === 'string') {
+        meta[name] = { name, content }
+      } else {
+        meta[name] = { name, ...content }
+      }
     }
     for (const [ogProperty, content] of Object.entries(openGraphDefaults)) {
-      let property = `og:${ ogProperty }`
+      const property = `og:${ ogProperty }`
       meta[property] = { property, content }
     }
     for (const [twName, content] of Object.entries(twitterDefaults)) {
-      let name = `twitter:${ twName }`
+      const name = `twitter:${ twName }`
       meta[name] = { name, content }
     }
 
@@ -38,20 +42,24 @@ module.exports = {
 
     if (data.meta) {
       for (const [name, content] of Object.entries(data.meta)) {
-        meta[name] = { name, content }
+        if (typeof content === 'string') {
+          meta[name] = { name, content }
+        } else {
+          meta[name] = { name, ...content }
+        }
       }
     }
 
     if (data.open_graph) {
       for (const [ogProperty, content] of Object.entries(data.open_graph)) {
-        let property = `og:${ ogProperty }`
+        const property = `og:${ ogProperty }`
         meta[property] = { property, content }
       }
     }
 
     if (data.twitter) {
       for (const [twName, content] of Object.entries(data.twitter)) {
-        let name = `twitter:${ twName }`
+        const name = `twitter:${ twName }`
         meta[name] = { name, content }
       }
     }
