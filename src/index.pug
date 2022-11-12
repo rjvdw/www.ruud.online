@@ -8,11 +8,18 @@ block prepend body
       .page-header__profile-picture(role="presentation")
 
 block content
+  // lang=markdown
   :md
     I have been developing software professionally since 2012.
     In my spare time I also like working on side projects, learning new programming languages, and trying out new web frameworks.
 
     Some (programming) languages I work with are: Java, Rust, Kotlin, Scala, Python, TypeScript, JavaScript/Node.js, HTML, CSS, C#, Ruby and Go.
+
+    ## Socials
+
+    * [{rel="me"}Mastodon](https://mastodon.nl/@rdcl)
+    * [{rel="me"}GitHub](https://github.com/rjvdw)
+    * [{rel="me"}LinkedIn](https://nl.linkedin.com/in/rjvanderweide)
 
     ## Certificates
 
@@ -22,22 +29,6 @@ block content
     * [Coursera – Functional Program Design in Scala](https://www.coursera.org/account/accomplishments/verify/DGTMN79P7VWJ)
     * [Certified ScrumMaster](http://bcert.me/skkgftvcl)
 
-  h2 Social
-  ul.social-links
-    each item in social
-      li.social-links__item
-        a.social-links__link(href=item.href rel="me")
-          svg.social-links__icon(
-            role="img"
-            width=item.icon.width
-            height=item.icon.height
-            viewBox=item.icon.viewbox
-            aria-label=item.label
-          )
-            each child in item.icon.children
-              != child
-
-  :md
     ## Other Links
 
     * [My gists on GitHub](https://gist.github.com/rjvdw)

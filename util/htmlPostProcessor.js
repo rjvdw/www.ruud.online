@@ -1,14 +1,46 @@
 'use strict'
 
-const crypto = require('crypto')
+const crypto = require('node:crypto')
+const fs = require('node:fs')
+const path = require('node:path')
 const cheerio = require('cheerio')
 const htmlMinifier = require('html-minifier')
-const fs = require('fs')
-const path = require('path')
 const { STATIC_DIR } = require('./constants')
 
 const ALGO = 'sha256'
 
+/**
+ * Finds all links that have a marker '{rel=".*?"}', and removes this marker while adding the relation "me" to the link.
+ */
+exports.linkRel = function linkRel(content) {
+  if (!this.outputPath || !this.outputPath.endsWith('.html')) {
+    return content
+  }
+
+  const $ = cheerio.load(content)
+  const marker = /\{rel="(.*?)"}/
+
+  $('a')
+    .filter((_i, elem) => marker.test($(elem).text()))
+    .each((_i, elem) => {
+      const a = $(elem)
+      let match
+      while ((match = a.text().match(marker)) !== null) {
+        addAttrValues(a, 'rel', match[1])
+        a.html(a.html().replace(marker, ''))
+      }
+    })
+
+  return $.html()
+}
+
+/**
+ * Adds attributes to external links to make them safe.
+ *
+ * * Adds target=_blank
+ * * Adds noopener
+ * * Adds noreferrer
+ */
 exports.linkProtection = function linkProtection(content) {
   if (!this.outputPath || !this.outputPath.endsWith('.html')) {
     return content
@@ -16,25 +48,18 @@ exports.linkProtection = function linkProtection(content) {
 
   const $ = cheerio.load(content)
 
-  // add link protection to all external links
   $('a[href^="http:"], a[href^="https:"]')
     .attr('target', '_blank')
     .each((_i, elem) => {
-      const a = $(elem)
-      const rel = (a.attr('rel') || '').split(' ')
-
-      if (rel.indexOf('noopener') === -1)
-        rel.push('noopener')
-
-      if (rel.indexOf('noreferrer') === -1)
-        rel.push('noreferrer')
-
-      a.attr('rel', rel.join(' '))
+      addAttrValues($(elem), 'rel', ['noopener', 'noreferrer'])
     })
 
   return $.html()
 }
 
+/**
+ * Minifies the output HTML.
+ */
 exports.minify = function minify(content) {
   if (!this.outputPath || !this.outputPath.endsWith('.html')) {
     return content
@@ -45,6 +70,9 @@ exports.minify = function minify(content) {
   })
 }
 
+/**
+ * Computes all relevant information for the Content-Security-Policy.
+ */
 exports.csp = function csp(content) {
   if (!this.outputPath || !this.outputPath.endsWith('.html')) {
     return content
@@ -90,4 +118,28 @@ exports.csp = function csp(content) {
   }
 
   return content
+}
+
+/**
+ * Adds additional values to an attribute, taking care to not add it more than once.
+ *
+ * @param {any}             el        The element to which the additional values should be added.
+ * @param {string}          attr      The attribute which should receive the additional values.
+ * @param {string|string[]} values    The additional values to add.
+ * @param {string}          separator
+ */
+function addAttrValues(el, attr, values, separator = ' ') {
+  const current = (el.attr(attr) || '').split(separator).filter(Boolean)
+
+  const list = Array.isArray(values)
+    ? values
+    : values.split(separator).filter(Boolean)
+
+  for (const value of list) {
+    if (current.indexOf(value) === -1) {
+      current.push(value)
+    }
+  }
+
+  el.attr(attr, current.join(separator))
 }

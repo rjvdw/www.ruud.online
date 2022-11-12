@@ -1,8 +1,8 @@
 'use strict'
 
-const path = require('path')
+const path = require('node:path')
 const { INPUT_DIR, OUTPUT_DIR, STATIC_DIR } = require('./util/constants')
-const { linkProtection, minify, csp } = require('./util/htmlPostProcessor')
+const { linkProtection, minify, csp, linkRel } = require('./util/htmlPostProcessor')
 const markdown = require('./util/md')
 const { stylesheet, compileAllStylesheets, stylesheetWatcher } = require('./util/stylesheet')
 
@@ -26,6 +26,7 @@ module.exports = (eleventyConfig) => {
     },
   })
 
+  eleventyConfig.addTransform('link-rel', linkRel)
   eleventyConfig.addTransform('link-protection', linkProtection)
   eleventyConfig.addTransform('minify', minify)
   eleventyConfig.addTransform('csp', csp)
