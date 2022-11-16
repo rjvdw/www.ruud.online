@@ -1,17 +1,3 @@
 [build]
 command = "npm run build && npm test"
 publish = "_site/"
-
-# Alias for Mastodon account
-[[redirects]]
-from = "/.well-known/webfinger"
-query = {resource = "acct:me@ruud.online"}
-to = "https://mastodon.nl/.well-known/webfinger?resource=acct:rdcl@mastodon.nl"
-status = 200
-force = true
-
-[[redirects]]
-from = "/@me"
-to = "https://mastodon.nl/@rdcl"
-status = 301
-force = true

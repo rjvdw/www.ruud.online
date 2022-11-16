@@ -1,15 +1,27 @@
+# Netlify redirect file
+# see: https://docs.netlify.com/routing/redirects/
+
+
+# From                                                # To                                                                  # Status
+
 # Enforce HTTPS
-http://ruud.online/* https://www.ruud.online/:splat 301!
-http://www.ruud.online/* https://www.ruud.online/:splat 301!
+http://ruud.online/*                                  https://www.ruud.online/:splat                                        301!
+http://www.ruud.online/*                              https://www.ruud.online/:splat                                        301!
+
+# Webfinger
+/.well-known/webfinger                                https://www-rdcl-dev.netlify.app/.netlify/functions/webfinger         200!
 
 # Redirect rdcl.nl and www.rdcl.nl to www.ruud.online
-http://rdcl.nl/* https://www.ruud.online/:splat 301!
-https://rdcl.nl/* https://www.ruud.online/:splat 301!
-http://www.rdcl.nl/* https://www.ruud.online/:splat 301!
-https://www.rdcl.nl/* https://www.ruud.online/:splat 301!
+http://rdcl.nl/*                                      https://www.ruud.online/:splat                                        301!
+https://rdcl.nl/*                                     https://www.ruud.online/:splat                                        301!
+http://www.rdcl.nl/*                                  https://www.ruud.online/:splat                                        301!
+https://www.rdcl.nl/*                                 https://www.ruud.online/:splat                                        301!
 
 # Redirect rudiculous.net and www.rudiculous.net to www.ruud.online
-http://rudiculous.net/* https://www.ruud.online/:splat 301!
-https://rudiculous.net/* https://www.ruud.online/:splat 301!
-http://www.rudiculous.net/* https://www.ruud.online/:splat 301!
-https://www.rudiculous.net/* https://www.ruud.online/:splat 301!
+http://rudiculous.net/*                               https://www.ruud.online/:splat                                        301!
+https://rudiculous.net/*                              https://www.ruud.online/:splat                                        301!
+http://www.rudiculous.net/*                           https://www.ruud.online/:splat                                        301!
+https://www.rudiculous.net/*                          https://www.ruud.online/:splat                                        301!
+
+# Mastodon account
+/@me                                                  https://mastodon.nl/@rdcl                                             301!
