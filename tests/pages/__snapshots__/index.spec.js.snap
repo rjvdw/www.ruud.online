@@ -59,24 +59,6 @@ exports[`home page matches snapshot 1`] = `
     <meta name="robots"
           content="index,follow"
     >
-    <meta name="twitter:card"
-          content="summary"
-    >
-    <meta name="twitter:creator"
-          content="@rdcl_dev"
-    >
-    <meta name="twitter:description"
-          content="Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands."
-    >
-    <meta name="twitter:image"
-          content="https://www.ruud.online/me.jpg"
-    >
-    <meta name="twitter:site"
-          content="@rdcl_dev"
-    >
-    <meta name="twitter:title"
-          content="ruud.online"
-    >
     <script type="application/ld+json">
       {"@context":"http://schema.org","@type":"Person","name":"Ruud van der Weide","email":["rj@rdcl.dev"],"url":"https://www.ruud.online","image":"https://www.ruud.online/me.jpg","sameAs":["https://mastodon.nl/@rdcl","https://github.com/rjvdw","https://keybase.io/rdcl","https://www.npmjs.com/~rdcl","https://nl.linkedin.com/in/rjvanderweide"]}
     </script>
