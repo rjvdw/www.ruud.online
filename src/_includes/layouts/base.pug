@@ -1,42 +1,42 @@
 doctype html
 html(lang="en")
-  head
-    block meta
-      meta(charset="utf-8")
-      meta(name="viewport" content="width=device-width, initial-scale=1")
-      meta(name="theme-color" content="#474069")
-      meta(name="color-scheme" content="light dark")
-      title= title
+	head
+		block meta
+			meta(charset="utf-8")
+			meta(name="viewport" content="width=device-width, initial-scale=1")
+			meta(name="theme-color" content="#474069")
+			meta(name="color-scheme" content="light dark")
+			title= title
 
-    block header-styles
-      :stylesheet(source='css/main.sass' critical)
-      :stylesheet(source='css/visual-enhancements.sass' async)
+		block header-styles
+			:stylesheet(source='css/main.sass' critical)
+			:stylesheet(source='css/visual-enhancements.sass' async)
 
-    block header-scripts
-      script.
-        document.querySelectorAll('link[rel="preload"][as="style"]').forEach(el => el.onload = () => el.rel = 'stylesheet')
+		block header-scripts
+			script.
+				document.querySelectorAll('link[rel="preload"][as="style"]').forEach(el => el.onload = () => el.rel = 'stylesheet')
 
-    block seo
-      block seo-meta
-        each attrs in seo.meta
-          meta&attributes(attrs)
-      block seo-ld-json
-        if linked_data
-          script(type="application/ld+json")!= JSON.stringify(linked_data)
+		block seo
+			block seo-meta
+				each attrs in seo.meta
+					meta&attributes(attrs)
+			block seo-ld-json
+				if linked_data
+					script(type="application/ld+json")!= JSON.stringify(linked_data)
 
-  body(class=cls)
-    block nav
-      nav.page-nav
-        ul.page-nav__container
-          each item in nav
-            if tab === item.tab
-              li.page-nav__item.page-nav__item--active
-                span.page-nav__item-link= item.text
-            else
-              li.page-nav__item
-                a.page-nav__item-link(href=item.path)= item.text
+	body(class=cls)
+		block nav
+			nav.page-nav
+				ul.page-nav__container
+					each item in nav
+						if tab === item.tab
+							li.page-nav__item.page-nav__item--active
+								span.page-nav__item-link= item.text
+						else
+							li.page-nav__item
+								a.page-nav__item-link(href=item.path)= item.text
 
-    block body
-      main.page-main
-        block content
-        | !{content}
+		block body
+			main.page-main
+				block content
+				| !{content}

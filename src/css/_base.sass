@@ -1,38 +1,38 @@
 @use "vars"
 
 html
-  accent-color: vars.$accent-color
-  box-sizing: border-box
-  font:
-    family: vars.$base-font-family
-    size: vars.$base-font-size
-  text-rendering: optimizeLegibility
-  margin: 0
-  padding: 0
-  width: 100%
+	accent-color: vars.$accent-color
+	box-sizing: border-box
+	font:
+		family: vars.$base-font-family
+		size: vars.$base-font-size
+	text-rendering: optimizeLegibility
+	margin: 0
+	padding: 0
+	width: 100%
 
 body
-  background-color: vars.$base-background-color
-  color: vars.$base-foreground-color
-  margin: 0
-  padding: 0
-  width: 100%
+	background-color: vars.$base-background-color
+	color: vars.$base-foreground-color
+	margin: 0
+	padding: 0
+	width: 100%
 
-  @media (prefers-color-scheme: dark)
-    background-color: vars.$base-background-color-dark
-    color: vars.$base-foreground-color-dark
+	@media (prefers-color-scheme: dark)
+		background-color: vars.$base-background-color-dark
+		color: vars.$base-foreground-color-dark
 
 *
-  box-sizing: inherit
+	box-sizing: inherit
 
 a
-  color: vars.$base-link-color
-  text-decoration: none
+	color: vars.$base-link-color
+	text-decoration: none
 
-  &:hover,
-  &:focus
-    color: vars.$base-link-color--hover
-    text-decoration: underline
+	&:hover,
+	&:focus
+		color: vars.$base-link-color--hover
+		text-decoration: underline
 
 li + li
-  margin-top: 1rem
+	margin-top: 1rem
