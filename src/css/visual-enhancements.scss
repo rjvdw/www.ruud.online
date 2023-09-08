@@ -1,0 +1,18 @@
+body {
+  background-image: url('/img/bg-light.png');
+  background-size: 100px 100px;
+  @media (prefers-color-scheme: dark) {
+    background-image: url('/img/bg-dark.png');
+  }
+}
+
+.page-header {
+  background-image: url('/img/mainbanner.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  &__profile-picture {
+    background-image: url('/img/me.png');
+    background-size: 120px 120px;
+  }
+}

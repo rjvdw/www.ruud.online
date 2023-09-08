@@ -1,0 +1,38 @@
+@use 'vars';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: vars.$headers-font-family;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+  padding: 0;
+  margin: 1.5rem 0 0.75rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  padding: 0;
+  margin: 1.5rem 0 0.75rem;
+}
+
+p {
+  margin: 0 0 0.75rem;
+  padding: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}

@@ -1,0 +1,37 @@
+@use '../vars';
+
+.social-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 -0.5rem;
+
+  &__item {
+    padding: 0;
+    margin: 0 0.5rem;
+    border-radius: 0.35rem;
+    overflow: hidden;
+  }
+
+  &__link {
+    color: #333;
+    display: flex;
+    transition: color 0.4s ease;
+
+    @media (prefers-color-scheme: dark) {
+      color: #ccc;
+    }
+
+    &:hover,
+    &:focus {
+      color: vars.$theme-color-3;
+    }
+  }
+
+  &__icon {
+    color: inherit;
+    width: 3rem;
+    height: 3rem;
+    fill: currentColor;
+  }
+}
