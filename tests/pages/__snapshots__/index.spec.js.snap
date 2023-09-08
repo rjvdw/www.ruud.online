@@ -24,7 +24,7 @@ exports[`home page matches snapshot 1`] = `
           href="/css/visual-enhancements.css"
     >
     <script>
-      document.querySelectorAll('link[rel="preload"][as="style"]').forEach(el => el.onload = () => el.rel = 'stylesheet')
+      document.querySelectorAll('link[rel="preload"][as="style"]').forEach((el) => (el.onload = () => (el.rel = "stylesheet")))
     </script>
     <meta name="author"
           content="Ruud van der Weide <rj@rdcl.dev>"

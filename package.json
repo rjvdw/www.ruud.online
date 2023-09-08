@@ -11,15 +11,16 @@
     "start": "eleventy --serve",
     "test": "jest",
     "prepare": "husky install",
-    "check:prettier": "prettier . --check .",
+    "check:prettier": "prettier . --check . 'src/**/*.pug'",
     "check:eslint": "eslint .",
     "check": "npm run check:prettier && npm run check:eslint",
-    "fix:prettier": "prettier . --write .",
+    "fix:prettier": "prettier . --write . 'src/**/*.pug'",
     "fix:eslint": "npm run check:eslint -- --fix",
     "fix": "npm run fix:prettier && npm run fix:eslint"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@prettier/plugin-pug": "^3.0.0",
     "cheerio": "^1.0.0-rc.10",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",

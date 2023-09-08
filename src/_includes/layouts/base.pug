@@ -9,12 +9,12 @@ html(lang="en")
       title= title
 
     block header-styles
-      :stylesheet(source='css/main.sass' critical)
-      :stylesheet(source='css/visual-enhancements.sass' async)
+      :stylesheet(source="css/main.sass" critical)
+      :stylesheet(source="css/visual-enhancements.sass" async)
 
     block header-scripts
       script.
-        document.querySelectorAll('link[rel="preload"][as="style"]').forEach(el => el.onload = () => el.rel = 'stylesheet')
+        document.querySelectorAll('link[rel="preload"][as="style"]').forEach((el) => (el.onload = () => (el.rel = "stylesheet")))
 
     block seo
       block seo-meta
@@ -39,4 +39,4 @@ html(lang="en")
     block body
       main.page-main
         block content
-        | !{content}
+        | !{ content }
