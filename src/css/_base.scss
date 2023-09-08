@@ -1,27 +1,22 @@
-@use 'vars';
-
 html {
   box-sizing: border-box;
-  width: 100%;
+  inline-size: 100%;
   padding: 0;
   margin: 0;
-  font-family: vars.$base-font-family;
-  font-size: vars.$base-font-size;
-  accent-color: vars.$accent-color;
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+  accent-color: var(--accent-color);
   text-rendering: optimizelegibility;
 }
 
 body {
-  width: 100%;
+  inline-size: 100%;
   padding: 0;
   margin: 0;
-  color: vars.$base-foreground-color;
-  background-color: vars.$base-background-color;
-
-  @media (prefers-color-scheme: dark) {
-    color: vars.$base-foreground-color-dark;
-    background-color: vars.$base-background-color-dark;
-  }
+  color: var(--base-foreground-color);
+  background-color: var(--base-background-color);
+  background-image: var(--base-background-image);
+  background-size: 100px 100px;
 }
 
 * {
@@ -29,16 +24,16 @@ body {
 }
 
 a {
-  color: vars.$base-link-color;
+  color: var(--base-link-color);
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: vars.$base-link-color-hover;
+    color: var(--base-link-color-hover);
     text-decoration: underline;
   }
 }
 
 li + li {
-  margin-top: 1rem;
+  margin-block-start: 1rem;
 }

@@ -1,5 +1,3 @@
-@use '../vars';
-
 .social-links {
   display: flex;
   padding: 0;
@@ -24,13 +22,13 @@
 
     &:hover,
     &:focus {
-      color: vars.$theme-color-3;
+      color: var(--theme-color-3);
     }
   }
 
   &__icon {
-    width: 3rem;
-    height: 3rem;
+    inline-size: 3rem;
+    block-size: 3rem;
     color: inherit;
     fill: currentcolor;
   }

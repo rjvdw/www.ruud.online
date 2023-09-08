@@ -9,12 +9,7 @@ html(lang="en")
       title= title
 
     block header-styles
-      :stylesheet(source="css/main.scss" critical)
-      :stylesheet(source="css/visual-enhancements.scss" async)
-
-    block header-scripts
-      script.
-        document.querySelectorAll('link[rel="preload"][as="style"]').forEach((el) => (el.onload = () => (el.rel = "stylesheet")))
+      link(rel="stylesheet" href="css/main.scss")
 
     block seo
       block seo-meta

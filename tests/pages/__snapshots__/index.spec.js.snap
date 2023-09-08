@@ -17,15 +17,6 @@ exports[`home page matches snapshot 1`] = `
     <title>
       ruud.online
     </title>
-    <link rel="stylesheet"
-          href="/css/main.css"
-    >
-    <link rel="stylesheet"
-          href="/css/visual-enhancements.css"
-    >
-    <script>
-      document.querySelectorAll('link[rel="preload"][as="style"]').forEach((el) => (el.onload = () => (el.rel = "stylesheet")))
-    </script>
     <meta name="author"
           content="Ruud van der Weide <rj@rdcl.dev>"
     >
@@ -54,8 +45,11 @@ exports[`home page matches snapshot 1`] = `
           content="index,follow"
     >
     <script type="application/ld+json">
-      {"@context":"http://schema.org","@type":"Person","name":"Ruud van der Weide","email":["rj@rdcl.dev"],"url":"https://www.ruud.online","image":"https://www.ruud.online/me.jpg","sameAs":["https://mastodon.nl/@rdcl","https://github.com/rjvdw","https://keybase.io/rdcl","https://www.npmjs.com/~rdcl","https://nl.linkedin.com/in/rjvanderweide"]}
+      {"@context":"http://schema.org","@type":"Person","name":"Ruud van der Weide","email":["rj@rdcl.dev"],"url":"https://www.ruud.online","image":"https://www.ruud.online/me.jpg","sameAs":["https://mastodon.nl/@rdcl","https://github.com/rjvdw","https://keybase.io/rdcl","https://nl.linkedin.com/in/rjvanderweide"]}
     </script>
+    <link rel="stylesheet"
+          href="/assets/main-86198214.css"
+    >
   </head>
   <body class="home">
     <nav class="page-nav">
