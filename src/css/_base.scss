@@ -1,26 +1,26 @@
 @use 'vars';
 
 html {
-  accent-color: vars.$accent-color;
   box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   font-family: vars.$base-font-family;
   font-size: vars.$base-font-size;
-  text-rendering: optimizeLegibility;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  accent-color: vars.$accent-color;
+  text-rendering: optimizelegibility;
 }
 
 body {
-  background-color: vars.$base-background-color;
-  color: vars.$base-foreground-color;
-  margin: 0;
-  padding: 0;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  color: vars.$base-foreground-color;
+  background-color: vars.$base-background-color;
 
   @media (prefers-color-scheme: dark) {
-    background-color: vars.$base-background-color-dark;
     color: vars.$base-foreground-color-dark;
+    background-color: vars.$base-background-color-dark;
   }
 }
 
@@ -34,7 +34,7 @@ a {
 
   &:hover,
   &:focus {
-    color: vars.$base-link-color--hover;
+    color: vars.$base-link-color-hover;
     text-decoration: underline;
   }
 }

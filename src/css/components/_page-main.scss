@@ -1,8 +1,8 @@
 @use '../vars';
 
 .page-main {
-  margin: 0 auto;
-  padding: 0.5rem;
-  max-width: vars.$page-max-width;
   width: calc(100% - 1rem);
+  max-width: vars.$page-max-width;
+  padding: 0.5rem;
+  margin: 0 auto;
 }

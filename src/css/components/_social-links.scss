@@ -2,20 +2,20 @@
 
 .social-links {
   display: flex;
-  list-style: none;
   padding: 0;
   margin: 0 -0.5rem;
+  list-style: none;
 
   &__item {
     padding: 0;
     margin: 0 0.5rem;
-    border-radius: 0.35rem;
     overflow: hidden;
+    border-radius: 0.35rem;
   }
 
   &__link {
-    color: #333;
     display: flex;
+    color: #333;
     transition: color 0.4s ease;
 
     @media (prefers-color-scheme: dark) {
@@ -29,9 +29,9 @@
   }
 
   &__icon {
-    color: inherit;
     width: 3rem;
     height: 3rem;
-    fill: currentColor;
+    color: inherit;
+    fill: currentcolor;
   }
 }

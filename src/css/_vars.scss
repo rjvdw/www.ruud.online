@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Base settings
 $base-font-size: 16px;
 $base-font-family: sans-serif;
@@ -6,8 +8,7 @@ $base-foreground-color: #333;
 $base-background-color-dark: #111;
 $base-foreground-color-dark: #aaa;
 $base-link-color: #337ab7;
-$base-link-color--hover: #23527c;
-
+$base-link-color-hover: #23527c;
 $page-max-width: 52rem;
 
 // Headers (h1, h2, ...)
@@ -16,12 +17,9 @@ $headers-font-family: sans-serif;
 // Branding
 $theme-color-1: #474069;
 $theme-foreground-color-1: #ddd;
-$theme-foreground-color-1--active: #fff;
-
-$theme-color-2: darken($theme-color-1, 20%);
+$theme-foreground-color-1-active: #fff;
+$theme-color-2: color.adjust($theme-color-1, $lightness: -20%);
 $theme-foreground-color-2: $theme-foreground-color-1;
-$theme-foreground-color-2--active: $theme-foreground-color-1--active;
-
-$theme-color-3: lighten($theme-color-1, 20%);
-
+$theme-foreground-color-2-active: $theme-foreground-color-1-active;
+$theme-color-3: color.adjust($theme-color-1, $lightness: 20%);
 $accent-color: $theme-color-3;

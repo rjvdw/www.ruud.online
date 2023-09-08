@@ -1,6 +1,7 @@
 body {
   background-image: url('/img/bg-light.png');
   background-size: 100px 100px;
+
   @media (prefers-color-scheme: dark) {
     background-image: url('/img/bg-dark.png');
   }
