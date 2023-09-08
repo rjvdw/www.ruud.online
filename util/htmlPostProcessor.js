@@ -13,25 +13,25 @@ const ALGO = 'sha256'
  * Finds all links that have a marker '{rel=".*?"}', and removes this marker while adding the relation "me" to the link.
  */
 exports.linkRel = function linkRel(content) {
-	if (!this.outputPath || !this.outputPath.endsWith('.html')) {
-		return content
-	}
+  if (!this.outputPath || !this.outputPath.endsWith('.html')) {
+    return content
+  }
 
-	const $ = cheerio.load(content)
-	const marker = /\{rel="(.*?)"}/
+  const $ = cheerio.load(content)
+  const marker = /\{rel="(.*?)"}/
 
-	$('a')
-		.filter((_i, elem) => marker.test($(elem).text()))
-		.each((_i, elem) => {
-			const a = $(elem)
-			let match
-			while ((match = a.text().match(marker)) !== null) {
-				addAttrValues(a, 'rel', match[1])
-				a.html(a.html().replace(marker, ''))
-			}
-		})
+  $('a')
+    .filter((_i, elem) => marker.test($(elem).text()))
+    .each((_i, elem) => {
+      const a = $(elem)
+      let match
+      while ((match = a.text().match(marker)) !== null) {
+        addAttrValues(a, 'rel', match[1])
+        a.html(a.html().replace(marker, ''))
+      }
+    })
 
-	return $.html()
+  return $.html()
 }
 
 /**
@@ -42,92 +42,92 @@ exports.linkRel = function linkRel(content) {
  * * Adds noreferrer
  */
 exports.linkProtection = function linkProtection(content) {
-	if (!this.outputPath || !this.outputPath.endsWith('.html')) {
-		return content
-	}
+  if (!this.outputPath || !this.outputPath.endsWith('.html')) {
+    return content
+  }
 
-	const $ = cheerio.load(content)
+  const $ = cheerio.load(content)
 
-	$('a[href^="http:"], a[href^="https:"]')
-		.attr('target', '_blank')
-		.each((_i, elem) => {
-			addAttrValues($(elem), 'rel', ['noopener', 'noreferrer'])
-		})
+  $('a[href^="http:"], a[href^="https:"]')
+    .attr('target', '_blank')
+    .each((_i, elem) => {
+      addAttrValues($(elem), 'rel', ['noopener', 'noreferrer'])
+    })
 
-	return $.html()
+  return $.html()
 }
 
 /**
  * Minifies the output HTML.
  */
 exports.minify = function minify(content) {
-	if (!this.outputPath || !this.outputPath.endsWith('.html')) {
-		return content
-	}
+  if (!this.outputPath || !this.outputPath.endsWith('.html')) {
+    return content
+  }
 
-	return htmlMinifier.minify(content, {
-		collapseWhitespace: true,
-	})
+  return htmlMinifier.minify(content, {
+    collapseWhitespace: true,
+  })
 }
 
 /**
  * Computes all relevant information for the Content-Security-Policy.
  */
 exports.csp = function csp(content) {
-	if (!this.outputPath || !this.outputPath.endsWith('.html')) {
-		return content
-	}
+  if (!this.outputPath || !this.outputPath.endsWith('.html')) {
+    return content
+  }
 
-	const cspHashes = {
-		style: new Set(),
-		script: new Set(),
-	}
-	const $ = cheerio.load(content)
+  const cspHashes = {
+    style: new Set(),
+    script: new Set(),
+  }
+  const $ = cheerio.load(content)
 
-	// compute csp hashes
-	$(
-		'script:where(:not([type]), [type="text/javascript"]):not([src]), style',
-	).each((_i, elem) => {
-		const $elem = $(elem)
-		const hash = `${ALGO}-${crypto
-			.createHash(ALGO)
-			.update($elem.html())
-			.digest('base64')}`
-		console.debug('[csp hash][%s] %s', elem.tagName, hash)
-		cspHashes[elem.tagName].add(hash)
-	})
+  // compute csp hashes
+  $(
+    'script:where(:not([type]), [type="text/javascript"]):not([src]), style',
+  ).each((_i, elem) => {
+    const $elem = $(elem)
+    const hash = `${ALGO}-${crypto
+      .createHash(ALGO)
+      .update($elem.html())
+      .digest('base64')}`
+    console.debug('[csp hash][%s] %s', elem.tagName, hash)
+    cspHashes[elem.tagName].add(hash)
+  })
 
-	const headers = new Set(
-		fs
-			.readFileSync(path.join(STATIC_DIR, '_headers'), { encoding: 'utf-8' })
-			.split('\n')
-			.filter((line) => line.indexOf('Content-Security-Policy') !== -1)
-			.map((line) => line.replace(/^\s*Content-Security-Policy:\s*/, ''))
-			.flatMap((line) => line.split(/\s*;\s*/g))
-			.flatMap((src) => src.split(' '))
-			.filter((entry) => entry.startsWith(`'${ALGO}-`))
-			.map((hash) => hash.substring(1, hash.length - 1)),
-	)
+  const headers = new Set(
+    fs
+      .readFileSync(path.join(STATIC_DIR, '_headers'), { encoding: 'utf-8' })
+      .split('\n')
+      .filter((line) => line.indexOf('Content-Security-Policy') !== -1)
+      .map((line) => line.replace(/^\s*Content-Security-Policy:\s*/, ''))
+      .flatMap((line) => line.split(/\s*;\s*/g))
+      .flatMap((src) => src.split(' '))
+      .filter((entry) => entry.startsWith(`'${ALGO}-`))
+      .map((hash) => hash.substring(1, hash.length - 1)),
+  )
 
-	// console.debug(`Hashes in the CSP: ${ Array.from(headers) }`)
+  // console.debug(`Hashes in the CSP: ${ Array.from(headers) }`)
 
-	for (const hash of cspHashes.style) {
-		if (!headers.has(hash)) {
-			console.error(
-				`[csp hash][style] ${this.outputPath} has a stylesheet with hash ${hash}, which does not appear in the CSP header.`,
-			)
-		}
-	}
+  for (const hash of cspHashes.style) {
+    if (!headers.has(hash)) {
+      console.error(
+        `[csp hash][style] ${this.outputPath} has a stylesheet with hash ${hash}, which does not appear in the CSP header.`,
+      )
+    }
+  }
 
-	for (const hash of cspHashes.script) {
-		if (!headers.has(hash)) {
-			console.error(
-				`[csp hash][script] ${this.outputPath} has a script with hash ${hash}, which does not appear in the CSP header.`,
-			)
-		}
-	}
+  for (const hash of cspHashes.script) {
+    if (!headers.has(hash)) {
+      console.error(
+        `[csp hash][script] ${this.outputPath} has a script with hash ${hash}, which does not appear in the CSP header.`,
+      )
+    }
+  }
 
-	return content
+  return content
 }
 
 /**
@@ -139,17 +139,17 @@ exports.csp = function csp(content) {
  * @param {string}          separator
  */
 function addAttrValues(el, attr, values, separator = ' ') {
-	const current = (el.attr(attr) || '').split(separator).filter(Boolean)
+  const current = (el.attr(attr) || '').split(separator).filter(Boolean)
 
-	const list = Array.isArray(values)
-		? values
-		: values.split(separator).filter(Boolean)
+  const list = Array.isArray(values)
+    ? values
+    : values.split(separator).filter(Boolean)
 
-	for (const value of list) {
-		if (current.indexOf(value) === -1) {
-			current.push(value)
-		}
-	}
+  for (const value of list) {
+    if (current.indexOf(value) === -1) {
+      current.push(value)
+    }
+  }
 
-	el.attr(attr, current.join(separator))
+  el.attr(attr, current.join(separator))
 }

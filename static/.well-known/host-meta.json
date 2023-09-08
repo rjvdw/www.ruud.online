@@ -1,9 +1,9 @@
 {
-	"subject": "https://www.ruud.online",
-	"links": [
-		{
-			"rel": "lrdd",
-			"template": "https://www.ruud.online/.well-known/webfinger?resource={uri}"
-		}
-	]
+  "subject": "https://www.ruud.online",
+  "links": [
+    {
+      "rel": "lrdd",
+      "template": "https://www.ruud.online/.well-known/webfinger?resource={uri}"
+    }
+  ]
 }

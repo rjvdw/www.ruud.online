@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = () => ({
-	context: process.env.CONTEXT,
+  context: process.env.CONTEXT,
 })

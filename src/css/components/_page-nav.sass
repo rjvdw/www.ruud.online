@@ -1,37 +1,37 @@
 @use '../vars'
 
 .page-nav
-	background-color: vars.$theme-color-1
-	color: vars.$theme-foreground-color-1
+  background-color: vars.$theme-color-1
+  color: vars.$theme-foreground-color-1
 
-	&__container
-		display: flex
-		margin: 0 auto
-		padding: 0
-		list-style: none
-		max-width: vars.$page-max-width
-		width: calc(100% - 1rem)
+  &__container
+    display: flex
+    margin: 0 auto
+    padding: 0
+    list-style: none
+    max-width: vars.$page-max-width
+    width: calc(100% - 1rem)
 
-	&__item
-		cursor: default
-		display: inline-flex
-		margin: 0
-		padding: 0
+  &__item
+    cursor: default
+    display: inline-flex
+    margin: 0
+    padding: 0
 
-		&:hover,
-		&:focus
-			color: vars.$theme-foreground-color-1--active
+    &:hover,
+    &:focus
+      color: vars.$theme-foreground-color-1--active
 
-		&--active
-			background-color: vars.$theme-color-2
-			color: vars.$theme-foreground-color-2--active
+    &--active
+      background-color: vars.$theme-color-2
+      color: vars.$theme-foreground-color-2--active
 
-	&__item-link
-		color: inherit
-		text-decoration: none
-		padding: 1rem
+  &__item-link
+    color: inherit
+    text-decoration: none
+    padding: 1rem
 
-		&:hover,
-		&:focus
-			color: inherit
-			text-decoration: none
+    &:hover,
+    &:focus
+      color: inherit
+      text-decoration: none
