@@ -16,7 +16,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPlugin(EleventyVitePlugin)
 
-  eleventyConfig.addPassthroughCopy({ [STATIC_DIR]: '.' })
+  eleventyConfig.addPassthroughCopy({ [STATIC_DIR]: 'public' })
   eleventyConfig.addPassthroughCopy({
     [path.join(INPUT_DIR, 'css')]: 'css',
   })

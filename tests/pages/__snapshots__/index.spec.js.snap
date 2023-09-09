@@ -48,7 +48,7 @@ exports[`home page matches snapshot 1`] = `
       {"@context":"http://schema.org","@type":"Person","name":"Ruud van der Weide","email":["rj@rdcl.dev"],"url":"https://www.ruud.online","image":"https://www.ruud.online/me.jpg","sameAs":["https://mastodon.nl/@rdcl","https://github.com/rjvdw","https://keybase.io/rdcl","https://nl.linkedin.com/in/rjvanderweide"]}
     </script>
     <link rel="stylesheet"
-          href="/assets/main-86198214.css"
+          href="/assets/main-18bcbb61.css"
     >
   </head>
   <body class="home">
