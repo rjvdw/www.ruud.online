@@ -25,7 +25,7 @@
     "@11ty/eleventy-plugin-vite": "^4.0.0",
     "@prettier/plugin-pug": "^3.0.0",
     "cheerio": "^1.0.0-rc.10",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
     "html-minifier": "^4.0.0",
@@ -34,7 +34,7 @@
     "jest-serializer-html": "^7.1.0",
     "markdown-it": "^13.0.1",
     "prettier": "^3.0.3",
-    "sass": "^1.67.0",
+    "sass": "^1.68.0",
     "stylelint": "^15.10.3",
     "stylelint-config-recess-order": "^4.3.0",
     "stylelint-config-standard-scss": "^11.0.0"
