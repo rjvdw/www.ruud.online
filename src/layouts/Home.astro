@@ -1,0 +1,31 @@
+---
+import type { MarkdownLayoutProps } from 'astro'
+import Layout from './Base.astro'
+import Hero from '../components/Hero.astro'
+import type { PageProps } from '../lib/types'
+
+type Props = MarkdownLayoutProps<PageProps>
+
+const { frontmatter } = Astro.props
+---
+
+<Layout {...frontmatter}>
+  <Hero
+    slot="before-main"
+    picture={{ src: '/img/me.png', alt: 'My profile picture' }}
+  >
+    <h1>Hello, World!</h1>
+    <p>
+      Welcome to my homepage. My name is Ruud and I am a software developer from
+      Nijmegen, the Netherlands.
+    </p>
+  </Hero>
+
+  <slot />
+</Layout>
+
+<style>
+  :root {
+    --hero-background-image: url('/img/mainbanner.png');
+  }
+</style>

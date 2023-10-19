@@ -1,47 +1,30 @@
 {
   "name": "www.ruud.online",
-  "description": "My personal homepage",
-  "main": "index.js",
-  "repository": "https://github.com/rjvdw/www.ruud.online.git",
-  "author": "Ruud van der Weide <rj@rdcl.dev>",
-  "license": "MIT",
-  "private": true,
+  "type": "module",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve",
-    "test": "jest",
     "prepare": "husky install",
-    "check:stylelint": "stylelint --allow-empty-input -f verbose 'src/css/**/*.{css,scss}'",
-    "check:prettier": "prettier . --check . 'src/**/*.pug'",
-    "check:eslint": "eslint .",
-    "check": "npm run check:stylelint && npm run check:prettier && npm run check:eslint",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "npm run check:stylelint && npm run check:prettier",
+    "check:stylelint": "stylelint --allow-empty-input -f verbose 'src/**/*.{css,astro}'",
+    "check:prettier": "prettier --check . 'src/**/*.astro'",
+    "fix": "npm run fix:stylelint && npm run fix:prettier",
     "fix:stylelint": "npm run check:stylelint -- --fix",
-    "fix:prettier": "prettier . --write . 'src/**/*.pug'",
-    "fix:eslint": "npm run check:eslint -- --fix",
-    "fix": "npm run fix:stylelint && npm run fix:prettier && npm run fix:eslint"
+    "fix:prettier": "prettier --write . 'src/**/*.astro'"
+  },
+  "dependencies": {
+    "astro": "^3.3.2"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-vite": "^4.0.0",
-    "@prettier/plugin-pug": "^3.0.0",
-    "cheerio": "^1.0.0-rc.10",
-    "eslint": "^8.51.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.28.1",
-    "html-minifier": "^4.0.0",
+    "@types/node": "^20.8.7",
     "husky": "^8.0.3",
-    "jest": "^29.7.0",
-    "jest-serializer-html": "^7.1.0",
-    "markdown-it": "^13.0.2",
     "prettier": "^3.0.3",
-    "sass": "^1.69.3",
-    "stylelint": "^15.10.3",
-    "stylelint-config-recess-order": "^4.3.0",
-    "stylelint-config-standard-scss": "^11.0.0"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "jest-serializer-html"
-    ]
+    "prettier-plugin-astro": "^0.12.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^4.3.0"
   }
 }

@@ -1,0 +1,54 @@
+---
+import PageNav from '../components/PageNav.astro'
+import PageNavItem from '../components/PageNavItem.astro'
+import { parseMeta } from '../lib/parseMeta'
+import type { PageProps } from '../lib/types'
+import '../styles/main.css'
+
+const BASE_TITLE = 'ruud.online'
+
+type Props = PageProps
+
+const { title, linkedData } = Astro.props
+const pageTitle = title ? `${title} | ${BASE_TITLE}` : BASE_TITLE
+const metaTags = parseMeta(Astro.props)
+const ldJson = linkedData ? JSON.stringify(linkedData) : null
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#474069" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{pageTitle}</title>
+
+    {metaTags.map((tag) => <meta {...tag} />)}
+    {ldJson && <script type="application/ld+json" set:html={ldJson} />}
+  </head>
+  <body>
+    <PageNav>
+      <PageNavItem href="/" active={Astro.url.pathname === '/'}>
+        Home
+      </PageNavItem>
+    </PageNav>
+    <slot name="before-main" />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  main {
+    inline-size: calc(100% - 1rem);
+    max-inline-size: var(--page-max-inline-size);
+    padding: 0.5rem;
+    margin-block: 0;
+    margin-inline: auto;
+  }
+</style>

@@ -1,0 +1,35 @@
+/*****
+ * Theming
+ */
+
+:root {
+  /* Base settings */
+  --base-font-family: sans-serif;
+  --base-background-image: url('/img/bg-light.png');
+  --base-background-color: #f3f3f3;
+  --base-foreground-color: #333;
+  --base-link-color: #337ab7;
+  --base-link-color-hover: #23527c;
+  --page-max-inline-size: 52rem;
+
+  /* Headers (h1, h2, ...) */
+  --headers-font-family: sans-serif;
+
+  /* Branding */
+  --theme-color-1: #474069;
+  --theme-foreground-color-1: #ddd;
+  --theme-foreground-color-1-active: #fff;
+  --theme-color-2: #1c192a;
+  --theme-foreground-color-2: var(--theme-foreground-color-1);
+  --theme-foreground-color-2-active: var(--theme-foreground-color-2);
+  --theme-color-3: #746ba4;
+  --accent-color: var(--theme-color-3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base-background-image: url('/img/bg-dark.png');
+    --base-background-color: #111;
+    --base-foreground-color: #aaa;
+  }
+}

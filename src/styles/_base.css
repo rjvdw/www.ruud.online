@@ -1,0 +1,30 @@
+/*****
+ * Base styling
+ */
+
+:root,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--base-font-family);
+  color: var(--base-foreground-color);
+  background-color: var(--base-background-color);
+  background-image: var(--base-background-image);
+  background-size: 100px 100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--base-link-color);
+}
+
+a:focus,
+a:hover {
+  color: var(--base-link-color-hover);
+}

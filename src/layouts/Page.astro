@@ -1,0 +1,13 @@
+---
+import type { MarkdownLayoutProps } from 'astro'
+import Layout from './Base.astro'
+import type { PageProps } from '../lib/types'
+
+type Props = MarkdownLayoutProps<PageProps>
+
+const { frontmatter } = Astro.props
+---
+
+<Layout {...frontmatter}>
+  <slot />
+</Layout>

@@ -1,0 +1,55 @@
+---
+interface Props {
+  href: string
+  active?: bool
+}
+
+const { href, active = false } = Astro.props
+---
+
+{
+  active ? (
+    <li class="active">
+      <span class="link">
+        <slot />
+      </span>
+    </li>
+  ) : (
+    <li>
+      <a href={href} class="link">
+        <slot />
+      </a>
+    </li>
+  )
+}
+
+<style>
+  li {
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+  }
+
+  li.active {
+    color: var(--theme-foreground-color-2-active);
+    background-color: var(--theme-color-2);
+  }
+
+  li:hover,
+  li:focus {
+    color: var(--theme-foreground-color-1-active);
+  }
+
+  .link {
+    padding: 1rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .link:hover,
+  .link:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+</style>

@@ -1,7 +1,11 @@
 {
-  "plugins": ["@prettier/plugin-pug"],
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": { "parser": "astro" }
+    }
+  ],
   "semi": false,
-  "singleQuote": true,
-  "pugAttributeSeparator": "as-needed",
-  "pugSingleQuote": false
+  "singleQuote": true
 }
