@@ -42,3 +42,4 @@ Some (programming) languages I work with are: Java, Rust, Kotlin, Scala, Python,
 - [My public GPG key](/0AE37E45.asc)
 - [My Todoist referral link](https://todoist.com/r/ruud_van_der_weide_amadng)
 - [My Fastmail referral link](https://ref.fm/u10211109)
+- [My Digital Ocean referral link](https://m.do.co/c/e4a395c506ef)
