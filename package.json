@@ -16,14 +16,14 @@
     "fix:prettier": "prettier --write . 'src/**/*.astro'"
   },
   "dependencies": {
-    "astro": "^3.6.4"
+    "astro": "^4.0.3"
   },
   "devDependencies": {
-    "@types/node": "^20.10.2",
+    "@types/node": "^20.10.4",
     "husky": "^8.0.3",
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2",
-    "stylelint": "^15.11.0",
+    "stylelint": "^16.0.1",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recess-order": "^4.4.0"
   }
