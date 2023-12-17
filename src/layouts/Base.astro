@@ -13,6 +13,8 @@ const { title, linkedData } = Astro.props
 const pageTitle = title ? `${title} | ${BASE_TITLE}` : BASE_TITLE
 const metaTags = parseMeta(Astro.props)
 const ldJson = linkedData ? JSON.stringify(linkedData) : null
+
+const { bodyClass } = Astro.props
 ---
 
 <!doctype html>
@@ -31,10 +33,14 @@ const ldJson = linkedData ? JSON.stringify(linkedData) : null
     {metaTags.map((tag) => <meta {...tag} />)}
     {ldJson && <script type="application/ld+json" set:html={ldJson} />}
   </head>
-  <body>
+  <body class={bodyClass}>
     <PageNav>
       <PageNavItem href="/" active={Astro.url.pathname === '/'}>
         Home
+      </PageNavItem>
+
+      <PageNavItem href="/resume" active={Astro.url.pathname === '/resume'}>
+        Resume
       </PageNavItem>
     </PageNav>
     <slot name="before-main" />

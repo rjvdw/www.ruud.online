@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Base.astro'
+import type { PageProps } from '../lib/types'
+
+type Props = PageProps
+
+const pageProps = Astro.props
+---
+
+<Layout {...pageProps}>
+  <h1>Resume</h1>
+
+  <div class="resume">
+    <slot />
+  </div>
+</Layout>
+
+<style is:global>
+  .resume-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block-end: 2rem;
+
+    & > h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    & > h2 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (width > 40rem) {
+    .resume {
+      display: grid;
+      grid-template-columns: max-content auto;
+    }
+
+    .resume-item {
+      display: grid;
+      grid-template-areas:
+        'date title'
+        '. description';
+      grid-template-rows: auto auto;
+      grid-template-columns: subgrid;
+      grid-column: span 2;
+      align-items: center;
+
+      & > h3 {
+        grid-area: date;
+      }
+
+      & > h2 {
+        grid-area: title;
+      }
+
+      & > div {
+        grid-area: description;
+      }
+    }
+  }
+</style>

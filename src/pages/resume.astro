@@ -1,0 +1,23 @@
+---
+import ResumeItem from '../components/ResumeItem.astro'
+import Layout from '../layouts/Resume.astro'
+import type { PageProps } from '../lib/types'
+
+const pageProps: PageProps = {
+  title: 'resume',
+}
+---
+
+<Layout {...pageProps}>
+  <ResumeItem from="2017-03-01">
+    <h2 slot="title">Software engineer at Quintor</h2>
+
+    <p>Lorem ipsum</p>
+  </ResumeItem>
+
+  <ResumeItem from="2022-03-01" to="2023-09-01">
+    <h2 slot="title">Lead developer at DICTU (via Quintor)</h2>
+
+    <p>Lorem ipsum</p>
+  </ResumeItem>
+</Layout>
