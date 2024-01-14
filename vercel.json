@@ -1,0 +1,138 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Download-Options",
+          "value": "noopen"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Permitted-Cross-Domain-Policies",
+          "value": "master-only"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; preload"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "interest-cohort=()"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; style-src 'self' 'unsafe-inline'"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://www.ruud.online"
+        }
+      ],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ruud.online"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://ruud.online"
+        }
+      ],
+      "has": [
+        {
+          "type": "host",
+          "value": "ruud.online"
+        }
+      ]
+    },
+    {
+      "source": "/(favicon\\..*|.*\\.asc)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/host-meta",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xrd+xml; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/host-meta.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xrd+json; charset=utf-8"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/.well-known/webfinger",
+      "destination": "https://www.rdcl.dev/.well-known/webfinger"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://www.ruud.online/",
+      "permanent": true,
+      "missing": [
+        {
+          "type": "host",
+          "value": "www.ruud.online"
+        }
+      ]
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://www.ruud.online/:path*",
+      "permanent": true,
+      "missing": [
+        {
+          "type": "host",
+          "value": "www.ruud.online"
+        }
+      ]
+    },
+    {
+      "source": "/@me",
+      "destination": "https://mastodon.nl/@rdcl"
+    }
+  ]
+}
