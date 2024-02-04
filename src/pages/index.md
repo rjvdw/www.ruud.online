@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/Home.astro
+canonicalUrl: https://www.ruud.online
 description: Welcome to my homepage. My name is Ruud and I am a software developer from Nĳmegen, the Netherlands.
 image: https://www.ruud.online/me.jpg
 linkedData:

@@ -10,4 +10,8 @@ export type LinkedData = {
   linkedData?: object
 }
 
-export type PageProps = MetaData & LinkedData
+export type Other = {
+  canonicalUrl?: string
+}
+
+export type PageProps = MetaData & LinkedData & Other

@@ -9,7 +9,7 @@ const BASE_TITLE = 'ruud.online'
 
 type Props = PageProps
 
-const { title, linkedData } = Astro.props
+const { title, linkedData, canonicalUrl } = Astro.props
 const pageTitle = title ? `${title} | ${BASE_TITLE}` : BASE_TITLE
 const metaTags = parseMeta(Astro.props)
 const ldJson = linkedData ? JSON.stringify(linkedData) : null
@@ -25,6 +25,7 @@ const ldJson = linkedData ? JSON.stringify(linkedData) : null
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="me" href="https://pleroma.rdcl.dev/users/rj" />
+    {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : ''}
 
     <title>{pageTitle}</title>
 
