@@ -16,7 +16,7 @@
     "fix:prettier": "prettier --write . 'src/**/*.astro'"
   },
   "dependencies": {
-    "astro": "^4.6.1"
+    "astro": "^4.6.3"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
@@ -25,6 +25,6 @@
     "prettier-plugin-astro": "^0.13.0",
     "stylelint": "^16.3.1",
     "stylelint-config-html": "^1.1.0",
-    "stylelint-config-recess-order": "^5.0.0"
+    "stylelint-config-recess-order": "^5.0.1"
   }
 }
