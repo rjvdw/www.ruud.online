@@ -8,7 +8,7 @@ linkedData:
   '@type': Person
   name: Ruud van der Weide
   email:
-    - rj@rdcl.dev
+    - ruud@ruud.online
   url: https://www.ruud.online
   image: https://www.ruud.online/me.jpg
   sameAs:
