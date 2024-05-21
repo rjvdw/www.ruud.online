@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Base.astro'
+
+const articles = await Astro.glob('./*.md')
+---
+
+<Layout title="math">
+  <h1>Math</h1>
+
+  <p>
+    In this section I sometimes write some mathematical stuff that I find
+    interesting.
+  </p>
+
+  <ul>
+    {
+      articles.map((article) => (
+        <li>
+          <a href={article.url}>{article.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

@@ -37,6 +37,9 @@ const ldJson = linkedData ? JSON.stringify(linkedData) : null
       <PageNavItem href="/" active={Astro.url.pathname === '/'}>
         Home
       </PageNavItem>
+      <PageNavItem href="/math" active={Astro.url.pathname.startsWith('/math')}>
+        Math
+      </PageNavItem>
     </PageNav>
     <slot name="before-main" />
     <main>

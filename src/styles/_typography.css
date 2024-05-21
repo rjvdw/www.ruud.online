@@ -42,3 +42,7 @@ ul {
 li + li {
   margin-block-start: 1rem;
 }
+
+math[display='block'] {
+  margin-block: 1.5rem;
+}

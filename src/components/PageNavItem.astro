@@ -1,27 +1,17 @@
 ---
 interface Props {
   href: string
-  active?: bool
+  active?: boolean
 }
 
 const { href, active = false } = Astro.props
 ---
 
-{
-  active ? (
-    <li class="active">
-      <span class="link">
-        <slot />
-      </span>
-    </li>
-  ) : (
-    <li>
-      <a href={href} class="link">
-        <slot />
-      </a>
-    </li>
-  )
-}
+<li class:list={[{ active }]}>
+  <a href={href} class="link">
+    <slot />
+  </a>
+</li>
 
 <style>
   li {

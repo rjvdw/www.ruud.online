@@ -1,0 +1,14 @@
+---
+import type { MarkdownLayoutProps } from 'astro'
+import Layout from './Base.astro'
+import type { PageProps } from '../lib/types'
+import 'katex/dist/katex.css'
+
+type Props = MarkdownLayoutProps<PageProps>
+
+const { frontmatter } = Astro.props
+---
+
+<Layout {...frontmatter}>
+  <slot />
+</Layout>
