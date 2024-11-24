@@ -16,6 +16,7 @@ linkedData:
     - https://github.com/rjvdw
     - https://keybase.io/rdcl
     - https://nl.linkedin.com/in/rjvanderweide
+    - https://bsky.app/profile/ruud.online
 ---
 
 I have been developing software professionally since 2012.
