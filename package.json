@@ -16,16 +16,16 @@
     "fix:prettier": "prettier --write . 'src/**/*.astro'"
   },
   "dependencies": {
-    "astro": "^4.16.14"
+    "astro": "^4.16.16"
   },
   "devDependencies": {
-    "@types/node": "^22.9.3",
+    "@types/node": "^22.10.1",
     "husky": "^9.1.7",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.14.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "stylelint": "^16.10.0",
+    "stylelint": "^16.11.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recess-order": "^5.1.1"
   }
