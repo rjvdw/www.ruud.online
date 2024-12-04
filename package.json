@@ -16,7 +16,7 @@
     "fix:prettier": "prettier --write . 'src/**/*.astro'"
   },
   "dependencies": {
-    "astro": "^4.16.16"
+    "astro": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
