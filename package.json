@@ -16,12 +16,12 @@
     "fix:prettier": "prettier --write . 'src/**/*.astro'"
   },
   "dependencies": {
-    "astro": "^5.0.2"
+    "astro": "^5.0.5"
   },
   "devDependencies": {
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.2",
     "husky": "^9.1.7",
-    "prettier": "^3.4.1",
+    "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
