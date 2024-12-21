@@ -16,7 +16,7 @@
     "fix:prettier": "prettier --write . 'src/**/*.astro'"
   },
   "dependencies": {
-    "astro": "^5.0.5"
+    "astro": "^5.1.1"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
@@ -25,7 +25,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "stylelint": "^16.11.0",
+    "stylelint": "^16.12.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recess-order": "^5.1.1"
   }
